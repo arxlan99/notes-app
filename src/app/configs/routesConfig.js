@@ -6,8 +6,9 @@ import SignInConfig from '../main/sign-in/SignInConfig';
 import SignUpConfig from '../main/sign-up/SignUpConfig';
 import SignOutConfig from '../main/sign-out/SignOutConfig';
 import appsConfigs from '../main/apps/appsConfigs';
+import pagesConfigs from '../main/pages/pagesConfigs';
 
-const routeConfigs = [...appsConfigs, SignOutConfig, SignInConfig, SignUpConfig];
+const routeConfigs = [...appsConfigs, ...pagesConfigs, SignOutConfig, SignInConfig, SignUpConfig];
 
 const routes = [
   ...FuseUtils.generateRoutesFromConfigs(routeConfigs, settingsConfig.defaultAuth),
