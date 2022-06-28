@@ -55,13 +55,12 @@ function NoteList(props) {
           480: 1,
         }}
         className="my-masonry-grid flex w-full"
-        columnClassName="my-masonry-grid_column flex flex-col p-8"
-      >
+        columnClassName="my-masonry-grid_column flex flex-col p-8">
         {filteredData.map((note) => (
           <NoteListItem
             key={note.id}
             note={note}
-            className="w-full rounded-20 shadow mb-16"
+            className="w-full rounded-2xl shadow-none border-2 border-gray-400 mb-16 hover:shadow-1 transition-shadow"
             variateDescSize={variateDescSize}
           />
         ))}

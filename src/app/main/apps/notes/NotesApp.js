@@ -46,8 +46,7 @@ function NotesApp(props) {
                   theme.palette.mode === 'light'
                     ? lighten(theme.palette.background.default, 0.4)
                     : lighten(theme.palette.background.default, 0.02),
-              }}
-            >
+              }}>
               <NewNote />
               <NoteList />
             </Box>

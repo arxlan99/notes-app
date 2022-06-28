@@ -206,8 +206,7 @@ const FusePageCarded = forwardRef((props, ref) => {
         ref={rootRef}
         scroll={props.scroll}
         leftsidebarwidth={props.leftSidebarWidth}
-        rightsidebarwidth={props.rightSidebarWidth}
-      >
+        rightsidebarwidth={props.rightSidebarWidth}>
         {props.header && <FusePageCardedHeader header={props.header} />}
 
         <div className="flex flex-auto flex-col container z-10 h-full shadow-1 rounded-t-16 relative overflow-hidden">
@@ -225,8 +224,7 @@ const FusePageCarded = forwardRef((props, ref) => {
             )}
             <FuseScrollbars
               className="FusePageCarded-contentWrapper"
-              enable={props.scroll === 'content'}
-            >
+              enable={props.scroll === 'content'}>
               {props.content && (
                 <div className={clsx('FusePageCarded-content')}>{props.content}</div>
               )}

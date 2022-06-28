@@ -20,12 +20,11 @@ const StyledListItem = styled(ListItem)(({ theme, active }) => ({
   fontWeight: 500,
   '&.active': {
     backgroundColor:
-      theme.palette.mode === 'light'
-        ? 'rgba(0, 0, 0, .05)!important'
-        : 'rgba(255, 255, 255, .1)!important',
+      theme.palette.mode === 'light' ? '#FEEFC3 !important' : 'rgba(255, 255, 255, .1)!important',
     pointerEvents: 'none',
     '& .list-item-icon': {
-      color: theme.palette.secondary.main,
+      // color: theme.palette.secondary.main,
+      color: '#000',
     },
   },
   '& .list-item-icon': {
@@ -42,16 +41,14 @@ function NotesSidebarContent(props) {
       <div
         component={motion.div}
         initial={{ y: 20, opacity: 0 }}
-        animate={{ y: 0, opacity: 1, transition: { delay: 0.2 } }}
-      >
+        animate={{ y: 0, opacity: 1, transition: { delay: 0.2 } }}>
         <List className="">
           <StyledListItem
             button
             component={NavLinkAdapter}
             to="/apps/notes"
             end
-            activeClassName="active"
-          >
+            activeClassName="active">
             <FuseSvgIcon className="list-item-icon" color="disabled">
               heroicons-outline:pencil-alt
             </FuseSvgIcon>
@@ -62,8 +59,7 @@ function NotesSidebarContent(props) {
             component={NavLinkAdapter}
             to="/apps/notes/reminders"
             end
-            activeClassName="active"
-          >
+            activeClassName="active">
             <FuseSvgIcon className="list-item-icon" color="disabled">
               heroicons-outline:bell
             </FuseSvgIcon>
@@ -74,8 +70,7 @@ function NotesSidebarContent(props) {
             button
             component={NavLinkAdapter}
             to="/apps/notes/archive"
-            activeClassName="active"
-          >
+            activeClassName="active">
             <FuseSvgIcon className="list-item-icon" color="disabled">
               heroicons-outline:archive
             </FuseSvgIcon>
@@ -89,8 +84,7 @@ function NotesSidebarContent(props) {
               component={NavLinkAdapter}
               to={`/apps/notes/labels/${label.id}`}
               end
-              activeClassName="active"
-            >
+              activeClassName="active">
               <FuseSvgIcon className="list-item-icon" color="disabled">
                 heroicons-outline:tag
               </FuseSvgIcon>

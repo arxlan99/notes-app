@@ -15,12 +15,10 @@ function NoteListItem(props) {
   return (
     <motion.div
       initial={{ y: 20, opacity: 0 }}
-      animate={{ y: 0, opacity: 1, transition: { delay: 0.1 } }}
-    >
+      animate={{ y: 0, opacity: 1, transition: { delay: 0.1 } }}>
       <Card
         className={clsx('cursor-pointer', props.className)}
-        onClick={() => dispatch(openNoteDialog(props.note.id))}
-      >
+        onClick={() => dispatch(openNoteDialog(props.note.id))}>
         {props.note.image && props.note.image !== '' && (
           <img src={props.note.image} className="w-full block" alt="note" />
         )}
@@ -37,8 +35,7 @@ function NoteListItem(props) {
                 setTimeout(() =>
                   setDescriptionStyle(props.note.content, el, props.variateDescSize)
                 );
-              }}
-            >
+              }}>
               {props.note.content}
             </div>
           </Typography>
@@ -53,8 +50,7 @@ function NoteListItem(props) {
                 </FuseSvgIcon>
                 <Typography
                   className={clsx('truncate mx-8', item.completed && 'line-through')}
-                  color={item.completed ? 'text.secondary' : 'inherit'}
-                >
+                  color={item.completed ? 'text.secondary' : 'inherit'}>
                   {item.content}
                 </Typography>
               </li>
