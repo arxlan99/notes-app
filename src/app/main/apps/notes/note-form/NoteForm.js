@@ -1,4 +1,4 @@
-import FuseScrollbars from '@fuse/core/FuseScrollbars';
+import FuseScrollbars from 'src/@common/core/FuseScrollbars';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { Controller, useForm } from 'react-hook-form';
 import _ from '@lodash';
@@ -10,8 +10,8 @@ import Tooltip from '@mui/material/Tooltip';
 import Typography from '@mui/material/Typography';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import withRouter from '@fuse/core/withRouter';
-import FuseSvgIcon from '@fuse/core/FuseSvgIcon';
+import withRouter from 'src/@common/core/withRouter';
+import FuseSvgIcon from 'src/@common/core/FuseSvgIcon';
 import * as yup from 'yup';
 import format from 'date-fns/format';
 import { useDispatch } from 'react-redux';

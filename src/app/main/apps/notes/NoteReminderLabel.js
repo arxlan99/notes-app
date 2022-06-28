@@ -2,7 +2,7 @@ import Chip from '@mui/material/Chip';
 import clsx from 'clsx';
 import format from 'date-fns/format';
 import { darken } from '@mui/material/styles';
-import FuseSvgIcon from '@fuse/core/FuseSvgIcon';
+import FuseSvgIcon from 'src/@common/core/FuseSvgIcon';
 
 function NoteLabel(props) {
   if (!props.date) {

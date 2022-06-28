@@ -1,5 +1,5 @@
 import { useSelector } from 'react-redux';
-import FuseSearch from '@fuse/core/FuseSearch';
+import FuseSearch from '@common/core/FuseSearch';
 import { selectFlatNavigation } from 'app/store/fuse/navigationSlice';
 
 function NavigationSearch(props) {

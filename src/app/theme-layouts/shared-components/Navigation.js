@@ -1,9 +1,9 @@
-import FuseNavigation from '@fuse/core/FuseNavigation';
+import FuseNavigation from 'src/@common/core/FuseNavigation';
 import clsx from 'clsx';
 import { memo, useMemo } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { selectNavigation } from 'app/store/fuse/navigationSlice';
-import useThemeMediaQuery from '@fuse/hooks/useThemeMediaQuery';
+import useThemeMediaQuery from 'src/@common/hooks/useThemeMediaQuery';
 import { navbarCloseMobile } from 'app/store/fuse/navbarSlice';
 
 function Navigation(props) {

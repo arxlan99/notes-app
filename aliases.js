@@ -1,5 +1,5 @@
 const aliases = (prefix = `src`) => ({
-  '@fuse': `${prefix}/@fuse`,
+  '@common': `${prefix}/@common`,
   '@history': `${prefix}/@history`,
   '@lodash': `${prefix}/@lodash`,
   '@mock-api': `${prefix}/@mock-api`,

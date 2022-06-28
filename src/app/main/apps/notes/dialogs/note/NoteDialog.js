@@ -1,4 +1,4 @@
-import { useDebounce } from '@fuse/hooks';
+import { useDebounce } from 'src/@common/hooks';
 import Dialog from '@mui/material/Dialog';
 import Slide from '@mui/material/Slide';
 import { forwardRef } from 'react';

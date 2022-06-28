@@ -6,7 +6,7 @@ import IconButton from '@mui/material/IconButton';
 import ListItem from '@mui/material/ListItem';
 import * as yup from 'yup';
 import _ from '@lodash';
-import FuseSvgIcon from '@fuse/core/FuseSvgIcon';
+import FuseSvgIcon from 'src/@common/core/FuseSvgIcon';
 import NoteListItemModel from '../../model/NoteListItemModel';
 
 const defaultValues = {

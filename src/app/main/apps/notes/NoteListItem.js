@@ -3,7 +3,7 @@ import Typography from '@mui/material/Typography';
 import clsx from 'clsx';
 import { motion } from 'framer-motion';
 import { useDispatch } from 'react-redux';
-import FuseSvgIcon from '@fuse/core/FuseSvgIcon';
+import FuseSvgIcon from 'src/@common/core/FuseSvgIcon';
 import NoteLabel from './NoteLabel';
 import NoteReminderLabel from './NoteReminderLabel';
 import setDescriptionStyle from './setDescriptionStyle';

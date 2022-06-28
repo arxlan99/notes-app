@@ -1,6 +1,6 @@
 import { styled } from '@mui/material/styles';
-import FuseMessage from '@fuse/core/FuseMessage';
-import FuseSuspense from '@fuse/core/FuseSuspense';
+import FuseMessage from 'src/@common/core/FuseMessage';
+import FuseSuspense from 'src/@common/core/FuseSuspense';
 import AppContext from 'app/AppContext';
 import { memo, useContext } from 'react';
 import { useSelector } from 'react-redux';

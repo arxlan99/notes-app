@@ -1,4 +1,4 @@
-import FuseUtils from '@fuse/utils/FuseUtils';
+import FuseUtils from 'src/@common/utils/FuseUtils';
 import axios from 'axios';
 import jwtDecode from 'jwt-decode';
 import jwtServiceConfig from './jwtServiceConfig';

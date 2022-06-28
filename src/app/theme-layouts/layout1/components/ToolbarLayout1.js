@@ -6,7 +6,6 @@ import { memo } from 'react';
 import { useSelector } from 'react-redux';
 import { selectFuseCurrentLayoutConfig, selectToolbarTheme } from 'app/store/fuse/settingsSlice';
 import { selectFuseNavbar } from 'app/store/fuse/navbarSlice';
-import LanguageSwitcher from '../../shared-components/LanguageSwitcher';
 import UserMenu from '../../shared-components/UserMenu';
 
 function ToolbarLayout1(props) {
@@ -31,7 +30,6 @@ function ToolbarLayout1(props) {
           <div className="flex flex-1 px-16"> </div>
 
           <div className="flex items-center px-8 h-full overflow-x-auto">
-            <LanguageSwitcher />
             <UserMenu />
           </div>
         </Toolbar>

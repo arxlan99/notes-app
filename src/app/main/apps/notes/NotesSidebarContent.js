@@ -1,11 +1,11 @@
-import NavLinkAdapter from '@fuse/core/NavLinkAdapter';
+import NavLinkAdapter from 'src/@common/core/NavLinkAdapter';
 import { styled } from '@mui/material/styles';
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import ListItemText from '@mui/material/ListItemText';
 import { motion } from 'framer-motion';
 import { useDispatch, useSelector } from 'react-redux';
-import FuseSvgIcon from '@fuse/core/FuseSvgIcon';
+import FuseSvgIcon from 'src/@common/core/FuseSvgIcon';
 import { openLabelsDialog, selectLabels } from './store/labelsSlice';
 
 const StyledListItem = styled(ListItem)(({ theme, active }) => ({

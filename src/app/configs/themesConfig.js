@@ -1,4 +1,4 @@
-import { fuseDark, skyBlue } from '@fuse/colors';
+import { fuseDark, skyBlue } from 'src/@common/colors';
 import { blueGrey } from '@mui/material/colors';
 
 export const lightPaletteText = {

@@ -2,7 +2,7 @@
     "compilerOptions": {
         "baseUrl": "./",
         "paths": {
-              "@fuse/*": ["./src/@fuse/*"],
+              "@common/*": ["src/@common/*"],
               "@history*": ["./src/@history"],
               "@lodash": ["./src/@lodash"],
               "@mock-api": ["./src/@mock-api"],

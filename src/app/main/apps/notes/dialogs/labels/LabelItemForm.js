@@ -7,9 +7,9 @@ import ListItem from '@mui/material/ListItem';
 import clsx from 'clsx';
 import { useDispatch } from 'react-redux';
 import * as yup from 'yup';
-import FuseSvgIcon from '@fuse/core/FuseSvgIcon';
+import FuseSvgIcon from 'src/@common/core/FuseSvgIcon';
 import { useEffect } from 'react';
-import { useDebounce } from '@fuse/hooks';
+import { useDebounce } from 'src/@common/hooks';
 import _ from '@lodash';
 import { removeLabel, updateLabel } from '../../store/labelsSlice';
 

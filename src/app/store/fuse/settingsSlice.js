@@ -7,7 +7,7 @@ import {
   extendThemeWithMixins,
   getParsedQuerySettings,
   mustHaveThemeOptions,
-} from '@fuse/default-settings';
+} from 'src/@common/default-settings';
 import settingsConfig from 'app/configs/settingsConfig';
 import themeLayoutConfigs from 'app/theme-layouts/themeLayoutConfigs';
 import { setUser, updateUserSettings } from 'app/store/userSlice';

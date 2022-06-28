@@ -1,4 +1,4 @@
-import FuseUtils from '@fuse/utils';
+import FuseUtils from 'src/@common/utils';
 import _ from '@lodash';
 
 function NoteListItemModel(data) {
