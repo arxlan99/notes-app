@@ -9,8 +9,7 @@ function Error404Page() {
       <div className="w-full max-w-3xl text-center">
         <motion.div
           initial={{ opacity: 0, scale: 0.6 }}
-          animate={{ opacity: 1, scale: 1, transition: { delay: 0.1 } }}
-        >
+          animate={{ opacity: 1, scale: 1, transition: { delay: 0.1 } }}>
           <Box
             component="svg"
             width="100%"
@@ -19,8 +18,7 @@ function Error404Page() {
             fill="none"
             preserveAspectRatio="xMidYMax slice"
             xmlns="http://www.w3.org/2000/svg"
-            sx={{ color: 'secondary.main' }}
-          >
+            sx={{ color: 'secondary.main' }}>
             <g clipPath="url(#clip0)">
               <path
                 d="M520.426 167.01C434.482 167.01 372.775 222.149 372.775 350.808C372.775 496.621 434.482 535.218 520.426 535.218C606.37 535.218 671.753 492.945 671.753 350.808C671.753 198.868 606.37 167.01 520.426 167.01ZM520.991 486.818C461.464 486.818 430.365 451.895 430.365 350.902C430.365 261.79 462.737 214.797 522.264 214.797C581.791 214.797 614.163 245.665 614.163 350.902C614.163 449.349 580.517 486.818 520.991 486.818Z"
@@ -221,31 +219,27 @@ function Error404Page() {
 
         <motion.div
           initial={{ opacity: 0, y: 40 }}
-          animate={{ opacity: 1, y: 0, transition: { delay: 0.2 } }}
-        >
+          animate={{ opacity: 1, y: 0, transition: { delay: 0.2 } }}>
           <Typography
             variant="h1"
-            className="mt-48 sm:mt-96 text-4xl md:text-7xl font-extrabold tracking-tight leading-tight md:leading-none text-center"
-          >
+            className="mt-48 sm:mt-96 text-4xl md:text-7xl font-extrabold tracking-tight leading-tight md:leading-none text-center">
             Ooops... 404!
           </Typography>
         </motion.div>
 
         <motion.div
           initial={{ opacity: 0, y: 40 }}
-          animate={{ opacity: 1, y: 0, transition: { delay: 0.2 } }}
-        >
+          animate={{ opacity: 1, y: 0, transition: { delay: 0.2 } }}>
           <Typography
             variant="h5"
             color="text.secondary"
-            className="mt-8 text-lg md:text-xl font-medium tracking-tight text-center"
-          >
+            className="mt-8 text-lg md:text-xl font-medium tracking-tight text-center">
             The page you requested could not be found.
           </Typography>
         </motion.div>
 
-        <Link className="block font-normal mt-48" to="/apps/dashboards/project">
-          Back to Dashboard
+        <Link className="block font-normal mt-48" to="/">
+          Back to Page
         </Link>
       </div>
     </div>

@@ -60,7 +60,7 @@ function NoteList(props) {
           <NoteListItem
             key={note.id}
             note={note}
-            className="w-full rounded-2xl shadow-none border-2 border-gray-400 mb-16 hover:shadow-1 transition-shadow"
+            className="w-full rounded-lg shadow-none border-1  mb-16 hover:shadow-1 transition-shadow"
             variateDescSize={variateDescSize}
           />
         ))}

@@ -5,7 +5,7 @@ function SplashScreen() {
   return (
     <div id="fuse-splash-screen">
       <div className="logo">
-        <div>a</div>
+        <div> </div>
       </div>
       <Box
         id="spinner"

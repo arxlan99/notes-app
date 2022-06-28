@@ -72,7 +72,7 @@ export function getParsedQuerySettings() {
  */
 export const defaultThemeOptions = {
   typography: {
-    fontFamily: ['Inter var', 'Roboto', '"Helvetica"', 'Arial', 'sans-serif'].join(','),
+    fontFamily: ['Roboto', '"Helvetica"', 'Arial', 'sans-serif'].join(','),
     fontWeightLight: 300,
     fontWeightRegular: 400,
     fontWeightMedium: 500,
@@ -110,7 +110,7 @@ export const defaultThemeOptions = {
           maxHeight: 40,
         },
         sizeSmall: {
-          borderRadius: '15px',
+          borderRadius: '18px',
         },
         sizeLarge: {
           borderRadius: '28px',

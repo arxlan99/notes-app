@@ -13,7 +13,8 @@ const StyledListItem = styled(ListItem)(({ theme, active }) => ({
   textDecoration: 'none!important',
   height: 40,
   width: '100%',
-  borderRadius: 20,
+  borderTopRightRadius: 20,
+  borderBottomRightRadius: 20,
   paddingLeft: 16,
   paddingRight: 16,
   marginBottom: 8,
@@ -37,7 +38,7 @@ function NotesSidebarContent(props) {
   const labels = useSelector(selectLabels);
 
   return (
-    <div className="px-16 py-24">
+    <div className="">
       <div
         component={motion.div}
         initial={{ y: 20, opacity: 0 }}

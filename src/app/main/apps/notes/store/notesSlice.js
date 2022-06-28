@@ -85,7 +85,8 @@ const notesSlice = createSlice({
       state.searchText = '';
     },
     toggleVariateDescSize: (state, action) => {
-      state.variateDescSize = !state.variateDescSize;
+      // state.variateDescSize = !state.variateDescSize;
+      state.variateDescSize = false;
     },
     openNoteDialog: (state, action) => {
       state.noteDialogId = action.payload;
@@ -119,6 +120,7 @@ export const selectDialogNoteId = ({ notesApp }) => notesApp.notes.noteDialogId;
 export const selectDialogNote = createSelector(
   [selectDialogNoteId, selectNotesEntities],
   (noteId, notesEntities) => {
+    console.log('noteId--------', noteId);
     return notesEntities[noteId];
   }
 );
