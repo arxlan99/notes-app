@@ -1,5 +1,5 @@
 import { combineReducers } from '@reduxjs/toolkit';
-import fuse from './fuse';
+import fuse from './common';
 import i18n from './i18nSlice';
 import user from './userSlice';
 

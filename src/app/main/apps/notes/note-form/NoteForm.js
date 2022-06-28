@@ -1,4 +1,4 @@
-import FuseScrollbars from 'src/@common/core/FuseScrollbars';
+import Scrollbars from '@common/core/Scrollbars';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { Controller, useForm } from 'react-hook-form';
 import _ from '@lodash';
@@ -11,7 +11,7 @@ import Typography from '@mui/material/Typography';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import withRouter from 'src/@common/core/withRouter';
-import FuseSvgIcon from 'src/@common/core/FuseSvgIcon';
+import FuseSvgIcon from '@common/core/SvgIcon';
 import * as yup from 'yup';
 import format from 'date-fns/format';
 import { useDispatch } from 'react-redux';
@@ -91,7 +91,7 @@ function NoteForm(props) {
 
   return (
     <div className="flex flex-col w-full">
-      <FuseScrollbars className="flex flex-auto w-full max-h-640">
+      <Scrollbars className="flex flex-auto w-full max-h-640">
         <div className="w-full">
           <Controller
             name="image"
@@ -111,8 +111,7 @@ function NoteForm(props) {
                     color="secondary"
                     aria-label="Delete Image"
                     type="button"
-                    onClick={() => onChange('')}
-                  >
+                    onClick={() => onChange('')}>
                     <FuseSvgIcon size={20}>heroicons-outline:trash</FuseSvgIcon>
                   </Fab>
                 </div>
@@ -208,7 +207,7 @@ function NoteForm(props) {
             </div>
           )}
         </div>
-      </FuseScrollbars>
+      </Scrollbars>
 
       <div className="flex flex-auto justify-between items-center px-16 pb-12">
         <div className="flex items-center">
@@ -239,8 +238,7 @@ function NoteForm(props) {
             <IconButton
               className="w-32 h-32 mx-4 p-0"
               onClick={() => setShowList(!showList)}
-              size="large"
-            >
+              size="large">
               <FuseSvgIcon size={20}>heroicons-outline:pencil-alt</FuseSvgIcon>
             </IconButton>
           </Tooltip>
@@ -271,8 +269,7 @@ function NoteForm(props) {
                         setTimeout(() => onCreate(getValues()));
                       }
                     }}
-                    size="large"
-                  >
+                    size="large">
                     <FuseSvgIcon size={20}>
                       {value ? 'heroicons-solid:archive' : 'heroicons-outline:archive'}
                     </FuseSvgIcon>
@@ -292,8 +289,7 @@ function NoteForm(props) {
               color="secondary"
               size="small"
               onClick={handleSubmit(onCreate)}
-              disabled={_.isEmpty(dirtyFields) || !isValid}
-            >
+              disabled={_.isEmpty(dirtyFields) || !isValid}>
               Create
             </Button>
           ) : (

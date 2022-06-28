@@ -4,8 +4,8 @@ import Toolbar from '@mui/material/Toolbar';
 import clsx from 'clsx';
 import { memo } from 'react';
 import { useSelector } from 'react-redux';
-import { selectFuseCurrentLayoutConfig, selectToolbarTheme } from 'app/store/fuse/settingsSlice';
-import { selectFuseNavbar } from 'app/store/fuse/navbarSlice';
+import { selectFuseCurrentLayoutConfig, selectToolbarTheme } from 'app/store/common/settingsSlice';
+import { selectFuseNavbar } from 'app/store/common/navbarSlice';
 import UserMenu from '../../shared-components/UserMenu';
 
 function ToolbarLayout1(props) {

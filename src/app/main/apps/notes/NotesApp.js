@@ -4,7 +4,7 @@ import { useDispatch } from 'react-redux';
 import { lighten, styled } from '@mui/material/styles';
 import { useParams } from 'react-router-dom';
 import Box from '@mui/material/Box';
-import FusePageCarded from 'src/@common/core/FusePageCarded';
+import FusePageCarded from '@common/core/PageCarded';
 import useThemeMediaQuery from 'src/@common/hooks/useThemeMediaQuery';
 import LabelsDialog from './dialogs/labels/LabelsDialog';
 import NoteDialog from './dialogs/note/NoteDialog';

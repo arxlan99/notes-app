@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { OutlinedInput } from '@mui/material';
 import { motion } from 'framer-motion';
 import InputAdornment from '@mui/material/InputAdornment';
-import FuseSvgIcon from 'src/@common/core/FuseSvgIcon';
+import FuseSvgIcon from '@common/core/SvgIcon';
 import { selectSearchText, setNotesSearchText } from './store/notesSlice';
 
 function NotesSearch(props) {

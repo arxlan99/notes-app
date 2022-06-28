@@ -5,7 +5,7 @@ import ListItem from '@mui/material/ListItem';
 import ListItemText from '@mui/material/ListItemText';
 import { motion } from 'framer-motion';
 import { useDispatch, useSelector } from 'react-redux';
-import FuseSvgIcon from 'src/@common/core/FuseSvgIcon';
+import FuseSvgIcon from '@common/core/SvgIcon';
 import { openLabelsDialog, selectLabels } from './store/labelsSlice';
 
 const StyledListItem = styled(ListItem)(({ theme, active }) => ({

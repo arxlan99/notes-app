@@ -7,7 +7,7 @@ import ListItemText from '@mui/material/ListItemText';
 import Popover from '@mui/material/Popover';
 import { useState } from 'react';
 import { useSelector } from 'react-redux';
-import FuseSvgIcon from 'src/@common/core/FuseSvgIcon';
+import FuseSvgIcon from '@common/core/SvgIcon';
 import { selectLabels } from '../store/labelsSlice';
 
 function NoteFormLabelMenu(props) {

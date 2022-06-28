@@ -4,7 +4,7 @@ import IconButton from '@mui/material/IconButton';
 import Input from '@mui/material/Input';
 import ListItem from '@mui/material/ListItem';
 import clsx from 'clsx';
-import FuseSvgIcon from 'src/@common/core/FuseSvgIcon';
+import FuseSvgIcon from '@common/core/SvgIcon';
 
 function NoteFormListItem(props) {
   function handleChange(event) {

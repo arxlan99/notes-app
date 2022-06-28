@@ -1,7 +1,7 @@
 import '@mock-api';
 import BrowserRouter from 'src/@common/core/BrowserRouter';
-import FuseLayout from 'src/@common/core/FuseLayout';
-import FuseTheme from 'src/@common/core/FuseTheme';
+import CommonLayout from '@common/core/CommonLayout';
+import CommonTheme from '@common/core/CommonTheme';
 import { SnackbarProvider } from 'notistack';
 import { useSelector } from 'react-redux';
 import rtlPlugin from 'stylis-plugin-rtl';
@@ -10,8 +10,8 @@ import { CacheProvider } from '@emotion/react';
 import { selectCurrentLanguageDirection } from 'app/store/i18nSlice';
 import { selectUser } from 'app/store/userSlice';
 import themeLayouts from 'app/theme-layouts/themeLayouts';
-import { selectMainTheme } from 'app/store/fuse/settingsSlice';
-import FuseAuthorization from 'src/@common/core/FuseAuthorization';
+import { selectMainTheme } from 'app/store/common/settingsSlice';
+import Authorization from '@common/core/Authorization';
 import settingsConfig from 'app/configs/settingsConfig';
 import withAppProviders from './withAppProviders';
 import { AuthProvider } from './auth/AuthContext';
@@ -44,12 +44,10 @@ const App = () => {
 
   return (
     <CacheProvider value={createCache(emotionCacheOptions[langDirection])}>
-      <FuseTheme theme={mainTheme} direction={langDirection}>
+      <CommonTheme theme={mainTheme} direction={langDirection}>
         <AuthProvider>
           <BrowserRouter>
-            <FuseAuthorization
-              userRole={user.role}
-              loginRedirectUrl={settingsConfig.loginRedirectUrl}>
+            <Authorization userRole={user.role} loginRedirectUrl={settingsConfig.loginRedirectUrl}>
               <SnackbarProvider
                 maxSnack={5}
                 anchorOrigin={{
@@ -59,12 +57,12 @@ const App = () => {
                 classes={{
                   containerRoot: 'bottom-0 right-0 mb-52 md:mb-68 mr-8 lg:mr-80 z-99',
                 }}>
-                <FuseLayout layouts={themeLayouts} />
+                <CommonLayout layouts={themeLayouts} />
               </SnackbarProvider>
-            </FuseAuthorization>
+            </Authorization>
           </BrowserRouter>
         </AuthProvider>
-      </FuseTheme>
+      </CommonTheme>
     </CacheProvider>
   );
 };

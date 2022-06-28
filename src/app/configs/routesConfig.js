@@ -1,5 +1,5 @@
 import FuseUtils from 'src/@common/utils';
-import FuseLoading from 'src/@common/core/FuseLoading';
+import CommonLoading from '@common/core/CommonLoading';
 import { Navigate } from 'react-router-dom';
 import settingsConfig from 'app/configs/settingsConfig';
 import SignInConfig from '../main/sign-in/SignInConfig';
@@ -19,7 +19,7 @@ const routes = [
   },
   {
     path: 'loading',
-    element: <FuseLoading />,
+    element: <CommonLoading />,
   },
   {
     path: '*',

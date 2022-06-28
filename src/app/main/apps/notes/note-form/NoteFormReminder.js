@@ -1,6 +1,6 @@
 import { DateTimePicker } from '@mui/lab';
 import TextField from '@mui/material/TextField';
-import FuseSvgIcon from 'src/@common/core/FuseSvgIcon';
+import FuseSvgIcon from '@common/core/SvgIcon';
 
 function NoteFormReminder(props) {
   const reminder = new Date(props.reminder);

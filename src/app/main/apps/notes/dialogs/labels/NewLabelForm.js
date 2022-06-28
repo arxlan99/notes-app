@@ -8,7 +8,7 @@ import ListItem from '@mui/material/ListItem';
 import clsx from 'clsx';
 import { useDispatch } from 'react-redux';
 import * as yup from 'yup';
-import FuseSvgIcon from 'src/@common/core/FuseSvgIcon';
+import FuseSvgIcon from '@common/core/SvgIcon';
 import { createLabel } from '../../store/labelsSlice';
 import LabelModel from '../../model/LabelModel';
 

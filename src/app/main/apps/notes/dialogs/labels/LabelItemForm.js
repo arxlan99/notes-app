@@ -7,7 +7,7 @@ import ListItem from '@mui/material/ListItem';
 import clsx from 'clsx';
 import { useDispatch } from 'react-redux';
 import * as yup from 'yup';
-import FuseSvgIcon from 'src/@common/core/FuseSvgIcon';
+import FuseSvgIcon from '@common/core/SvgIcon';
 import { useEffect } from 'react';
 import { useDebounce } from 'src/@common/hooks';
 import _ from '@lodash';
