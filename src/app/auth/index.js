@@ -1,1 +1,3 @@
-export { default as authRoles } from './authRoles';
+import authRoles from "./authRoles";
+
+export default authRoles;

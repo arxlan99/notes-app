@@ -1,7 +1,7 @@
-import Typography from '@mui/material/Typography';
-import { motion } from 'framer-motion';
-import { Link } from 'react-router-dom';
-import Box from '@mui/material/Box';
+import Typography from "@mui/material/Typography";
+import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
+import Box from "@mui/material/Box";
 
 function Error500Page() {
   return (
@@ -9,8 +9,7 @@ function Error500Page() {
       <div className="w-full max-w-3xl text-center">
         <motion.div
           initial={{ opacity: 0, scale: 0.6 }}
-          animate={{ opacity: 1, scale: 1, transition: { delay: 0.1 } }}
-        >
+          animate={{ opacity: 1, scale: 1, transition: { delay: 0.1 } }}>
           <Box
             component="svg"
             width="100%"
@@ -19,8 +18,7 @@ function Error500Page() {
             fill="none"
             preserveAspectRatio="xMidYMax slice"
             xmlns="http://www.w3.org/2000/svg"
-            sx={{ color: 'secondary.main' }}
-          >
+            sx={{ color: "secondary.main" }}>
             <g clipPath="url(#clip0)">
               <path
                 d="M0 51.1424C0 128.64 48.6181 191.351 108.701 191.351L0 51.1424Z"
@@ -242,25 +240,21 @@ function Error500Page() {
 
         <motion.div
           initial={{ opacity: 0, y: 40 }}
-          animate={{ opacity: 1, y: 0, transition: { delay: 0.2 } }}
-        >
+          animate={{ opacity: 1, y: 0, transition: { delay: 0.2 } }}>
           <Typography
             variant="h1"
-            className="mt-48 sm:mt-96 text-4xl md:text-7xl font-extrabold tracking-tight leading-tight md:leading-none text-center"
-          >
+            className="mt-48 sm:mt-96 text-4xl md:text-7xl font-extrabold tracking-tight leading-tight md:leading-none text-center">
             Something went wrong!
           </Typography>
         </motion.div>
 
         <motion.div
           initial={{ opacity: 0, y: 40 }}
-          animate={{ opacity: 1, y: 0, transition: { delay: 0.2 } }}
-        >
+          animate={{ opacity: 1, y: 0, transition: { delay: 0.2 } }}>
           <Typography
             variant="h5"
             color="text.secondary"
-            className="mt-8 text-lg md:text-xl font-medium tracking-tight text-center"
-          >
+            className="mt-8 text-lg md:text-xl font-medium tracking-tight text-center">
             Server Error 500. Our staff has been notified, thank you for your understanding.
           </Typography>
         </motion.div>

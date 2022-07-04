@@ -1,11 +1,11 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice } from "@reduxjs/toolkit";
 
 const dialogSlice = createSlice({
-  name: 'dialog',
+  name: "dialog",
   initialState: {
     state: false,
     options: {
-      children: 'Hi',
+      children: "Hi",
     },
   },
   reducers: {

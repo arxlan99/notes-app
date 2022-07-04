@@ -1,14 +1,14 @@
-import Button from '@mui/material/Button';
-import ListItemIcon from '@mui/material/ListItemIcon';
-import ListItemText from '@mui/material/ListItemText';
-import MenuItem from '@mui/material/MenuItem';
-import Popover from '@mui/material/Popover';
-import Typography from '@mui/material/Typography';
-import { useState } from 'react';
-import { useSelector } from 'react-redux';
-import { Link, NavLink } from 'react-router-dom';
-import FuseSvgIcon from '@common/core/SvgIcon';
-import { selectUser } from 'app/store/userSlice';
+import Button from "@mui/material/Button";
+import ListItemIcon from "@mui/material/ListItemIcon";
+import ListItemText from "@mui/material/ListItemText";
+import MenuItem from "@mui/material/MenuItem";
+import Popover from "@mui/material/Popover";
+import Typography from "@mui/material/Typography";
+import { useState } from "react";
+import { useSelector } from "react-redux";
+import { Link, NavLink } from "react-router-dom";
+import FuseSvgIcon from "@common/core/SvgIcon";
+import { selectUser } from "app/store/userSlice";
 
 function UserMenu(props) {
   const user = useSelector(selectUser);
@@ -41,15 +41,15 @@ function UserMenu(props) {
         anchorEl={userMenu}
         onClose={userMenuClose}
         anchorOrigin={{
-          vertical: 'bottom',
-          horizontal: 'center',
+          vertical: "bottom",
+          horizontal: "center",
         }}
         transformOrigin={{
-          vertical: 'top',
-          horizontal: 'center',
+          vertical: "top",
+          horizontal: "center",
         }}
         classes={{
-          paper: 'py-8',
+          paper: "py-8",
         }}>
         {!user.role || user.role.length === 0 ? (
           <>

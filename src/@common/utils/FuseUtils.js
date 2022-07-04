@@ -1,6 +1,6 @@
 // eslint-disable-next-line max-classes-per-file
-import _ from '@lodash';
-import * as colors from '@mui/material/colors';
+import _ from "@lodash";
+import * as colors from "@mui/material/colors";
 
 class EventEmitter {
   constructor() {
@@ -8,7 +8,7 @@ class EventEmitter {
   }
 
   _getEventListByName(eventName) {
-    if (typeof this.events[eventName] === 'undefined') {
+    if (typeof this.events[eventName] === "undefined") {
       this.events[eventName] = new Set();
     }
     return this.events[eventName];
@@ -44,7 +44,7 @@ class EventEmitter {
 
 class FuseUtils {
   static filterArrayByString(mainArr, searchText) {
-    if (searchText === '') {
+    if (searchText === "") {
       return mainArr;
     }
 
@@ -64,7 +64,7 @@ class FuseUtils {
       const prop = propArray[i];
       const value = itemObj[prop];
 
-      if (typeof value === 'string') {
+      if (typeof value === "string") {
         if (this.searchInString(value, searchText)) {
           return true;
         }
@@ -74,7 +74,7 @@ class FuseUtils {
         }
       }
 
-      if (typeof value === 'object') {
+      if (typeof value === "object") {
         if (this.searchInObj(value, searchText)) {
           return true;
         }
@@ -85,13 +85,13 @@ class FuseUtils {
 
   static searchInArray(arr, searchText) {
     arr.forEach((value) => {
-      if (typeof value === 'string') {
+      if (typeof value === "string") {
         if (this.searchInString(value, searchText)) {
           return true;
         }
       }
 
-      if (typeof value === 'object') {
+      if (typeof value === "object") {
         if (this.searchInObj(value, searchText)) {
           return true;
         }
@@ -127,11 +127,11 @@ class FuseUtils {
     return text
       .toString()
       .toLowerCase()
-      .replace(/\s+/g, '-') // Replace spaces with -
-      .replace(/\W+/g, '') // Remove all non-word chars
-      .replace(/--+/g, '-') // Replace multiple - with single -
-      .replace(/^-+/, '') // Trim - from start of text
-      .replace(/-+$/, ''); // Trim - from end of text
+      .replace(/\s+/g, "-") // Replace spaces with -
+      .replace(/\W+/g, "") // Remove all non-word chars
+      .replace(/--+/g, "-") // Replace multiple - with single -
+      .replace(/^-+/, "") // Trim - from start of text
+      .replace(/-+$/, ""); // Trim - from end of text
   }
 
   static setRoutes(config, defaultAuth) {
@@ -172,7 +172,7 @@ class FuseUtils {
     for (i = 0; i < Object.keys(obj).length; i += 1) {
       childObj = obj[Object.keys(obj)[i]];
 
-      if (typeof childObj === 'object') {
+      if (typeof childObj === "object") {
         result = this.findById(childObj, id);
         if (result) {
           return result;
@@ -186,7 +186,7 @@ class FuseUtils {
     for (let i = 0; i < navigationItems.length; i += 1) {
       const navItem = navigationItems[i];
 
-      if (navItem.type === 'item') {
+      if (navItem.type === "item") {
         flatNavigation.push({
           id: navItem.id,
           title: navItem.title,
@@ -197,7 +197,7 @@ class FuseUtils {
         });
       }
 
-      if (navItem.type === 'collapse' || navItem.type === 'group') {
+      if (navItem.type === "collapse" || navItem.type === "group") {
         if (navItem.children) {
           this.getFlatNavigation(navItem.children, flatNavigation);
         }
@@ -207,24 +207,24 @@ class FuseUtils {
   }
 
   static randomMatColor(hue) {
-    hue = hue || '400';
+    hue = hue || "400";
     const mainColors = [
-      'red',
-      'pink',
-      'purple',
-      'deepPurple',
-      'indigo',
-      'blue',
-      'lightBlue',
-      'cyan',
-      'teal',
-      'green',
-      'lightGreen',
-      'lime',
-      'yellow',
-      'amber',
-      'orange',
-      'deepOrange',
+      "red",
+      "pink",
+      "purple",
+      "deepPurple",
+      "indigo",
+      "blue",
+      "lightBlue",
+      "cyan",
+      "teal",
+      "green",
+      "lightGreen",
+      "lime",
+      "yellow",
+      "amber",
+      "orange",
+      "deepOrange",
     ];
     const randomColor = mainColors[Math.floor(Math.random() * mainColors.length)];
     return colors[randomColor][hue];
@@ -269,7 +269,7 @@ class FuseUtils {
         }
 
         if (_item.children) {
-          return _.merge({}, _.omit(_item, ['children']), {
+          return _.merge({}, _.omit(_item, ["children"]), {
             children: this.removeNavItem(_item.children, id),
           });
         }

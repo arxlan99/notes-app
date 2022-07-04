@@ -1,5 +1,5 @@
-import _ from '@lodash';
-import { useCallback, useState } from 'react';
+import _ from "@lodash";
+import { useCallback, useState } from "react";
 
 function useForm(initialState, onSubmit) {
   const [form, setForm] = useState(initialState);
@@ -10,7 +10,7 @@ function useForm(initialState, onSubmit) {
       _.setIn(
         { ..._form },
         event.target.name,
-        event.target.type === 'checkbox' ? event.target.checked : event.target.value
+        event.target.type === "checkbox" ? event.target.checked : event.target.value
       )
     );
   }, []);

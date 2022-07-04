@@ -1,1 +1,1 @@
-export { default } from './CommonDialog';
+export { default } from "./CommonDialog";

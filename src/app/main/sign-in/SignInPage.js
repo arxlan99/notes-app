@@ -1,40 +1,40 @@
-import { yupResolver } from '@hookform/resolvers/yup';
-import { Controller, useForm } from 'react-hook-form';
-import Button from '@mui/material/Button';
-import Checkbox from '@mui/material/Checkbox';
-import FormControl from '@mui/material/FormControl';
-import FormControlLabel from '@mui/material/FormControlLabel';
-import TextField from '@mui/material/TextField';
-import Typography from '@mui/material/Typography';
-import { Link } from 'react-router-dom';
-import * as yup from 'yup';
-import _ from '@lodash';
-import FuseSvgIcon from '@common/core/SvgIcon';
-import Box from '@mui/material/Box';
-import Paper from '@mui/material/Paper';
-import { useEffect } from 'react';
-import jwtService from '../../auth/services/jwtService';
+import { yupResolver } from "@hookform/resolvers/yup";
+import { Controller, useForm } from "react-hook-form";
+import Button from "@mui/material/Button";
+import Checkbox from "@mui/material/Checkbox";
+import FormControl from "@mui/material/FormControl";
+import FormControlLabel from "@mui/material/FormControlLabel";
+import TextField from "@mui/material/TextField";
+import Typography from "@mui/material/Typography";
+import { Link } from "react-router-dom";
+import * as yup from "yup";
+import _ from "@lodash";
+import FuseSvgIcon from "@common/core/SvgIcon";
+import Box from "@mui/material/Box";
+import Paper from "@mui/material/Paper";
+import { useEffect } from "react";
+import jwtService from "../../auth/services/jwtService";
 
 /**
  * Form Validation Schema
  */
 const schema = yup.object().shape({
-  email: yup.string().email('You must enter a valid email').required('You must enter a email'),
+  email: yup.string().email("You must enter a valid email").required("You must enter a email"),
   password: yup
     .string()
-    .required('Please enter your password.')
-    .min(4, 'Password is too short - must be at least 4 chars.'),
+    .required("Please enter your password.")
+    .min(4, "Password is too short - must be at least 4 chars."),
 });
 
 const defaultValues = {
-  email: '',
-  password: '',
+  email: "",
+  password: "",
   remember: true,
 };
 
 function SignInPage() {
   const { control, formState, handleSubmit, setError, setValue } = useForm({
-    mode: 'onChange',
+    mode: "onChange",
     defaultValues,
     resolver: yupResolver(schema),
   });
@@ -42,8 +42,8 @@ function SignInPage() {
   const { isValid, dirtyFields, errors } = formState;
 
   useEffect(() => {
-    setValue('email', 'admin@fusetheme.com', { shouldDirty: true, shouldValidate: true });
-    setValue('password', 'admin', { shouldDirty: true, shouldValidate: true });
+    setValue("email", "admin@admin.com", { shouldDirty: true, shouldValidate: true });
+    setValue("password", "admin", { shouldDirty: true, shouldValidate: true });
   }, [setValue]);
 
   function onSubmit({ email, password }) {
@@ -55,7 +55,7 @@ function SignInPage() {
       .catch((_errors) => {
         _errors.forEach((error) => {
           setError(error.type, {
-            type: 'manual',
+            type: "manual",
             message: error.message,
           });
         });
@@ -175,7 +175,7 @@ function SignInPage() {
 
       <Box
         className="relative hidden md:flex flex-auto items-center justify-center h-full p-64 lg:px-112 overflow-hidden"
-        sx={{ backgroundColor: 'primary.main' }}>
+        sx={{ backgroundColor: "primary.main" }}>
         <svg
           className="absolute inset-0 pointer-events-none"
           viewBox="0 0 960 540"
@@ -185,7 +185,7 @@ function SignInPage() {
           xmlns="http://www.w3.org/2000/svg">
           <Box
             component="g"
-            sx={{ color: 'primary.light' }}
+            sx={{ color: "primary.light" }}
             className="opacity-20"
             fill="none"
             stroke="currentColor"
@@ -197,7 +197,7 @@ function SignInPage() {
         <Box
           component="svg"
           className="absolute -top-64 -right-64 opacity-20"
-          sx={{ color: 'primary.light' }}
+          sx={{ color: "primary.light" }}
           viewBox="0 0 220 192"
           width="220px"
           height="192px"

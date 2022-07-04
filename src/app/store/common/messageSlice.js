@@ -1,19 +1,19 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
   state: null,
   options: {
     anchorOrigin: {
-      vertical: 'top',
-      horizontal: 'center',
+      vertical: "top",
+      horizontal: "center",
     },
     autoHideDuration: 2000,
-    message: 'Hi',
+    message: "Hi",
     variant: null,
   },
 };
 const messageSlice = createSlice({
-  name: 'message',
+  name: "message",
   initialState,
   reducers: {
     showMessage: (state, action) => {

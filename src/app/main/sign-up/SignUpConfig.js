@@ -1,5 +1,5 @@
-import SignUpPage from './SignUpPage';
-import authRoles from '../../auth/authRoles';
+import SignUpPage from "./SignUpPage";
+import authRoles from "../../auth/authRoles";
 
 const SignUpConfig = {
   settings: {
@@ -26,7 +26,7 @@ const SignUpConfig = {
   auth: authRoles.onlyGuest,
   routes: [
     {
-      path: 'sign-up',
+      path: "sign-up",
       element: <SignUpPage />,
     },
   ],

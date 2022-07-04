@@ -1,7 +1,7 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice } from "@reduxjs/toolkit";
 
 const navbarSlice = createSlice({
-  name: 'navbar',
+  name: "navbar",
   initialState: {
     open: true,
     mobileOpen: false,

@@ -1,6 +1,6 @@
 const path = require(`path`);
 const alias = require(`./aliases`);
-const { aliasWebpack } = require('react-app-alias');
+const { aliasWebpack } = require("react-app-alias");
 
 const SRC = `./src`;
 const aliases = alias(SRC);

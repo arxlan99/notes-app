@@ -1,1 +1,1 @@
-export { default } from './CommonLoading';
+export { default } from "./CommonLoading";

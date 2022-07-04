@@ -1,10 +1,10 @@
-import { useEffect, useState } from 'react';
-import { useTheme } from '@mui/material/styles';
+import { useEffect, useState } from "react";
+import { useTheme } from "@mui/material/styles";
 
 function useThemeMediaQuery(themeCallbackFunc) {
   const theme = useTheme();
 
-  const query = themeCallbackFunc(theme).replace('@media ', '');
+  const query = themeCallbackFunc(theme).replace("@media ", "");
 
   const [matches, setMatches] = useState(getMatches(query));
 
@@ -20,9 +20,9 @@ function useThemeMediaQuery(themeCallbackFunc) {
       // Create an event listener
       const handler = (event) => setMatches(event.matches);
       // Attach the event listener to know when the matches value changes
-      mediaQuery.addEventListener('change', handler);
+      mediaQuery.addEventListener("change", handler);
       // Remove the event listener on cleanup
-      return () => mediaQuery.removeEventListener('change', handler);
+      return () => mediaQuery.removeEventListener("change", handler);
     },
     [query] // Empty array ensures effect is only run on mount and unmount
   );

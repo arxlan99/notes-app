@@ -1,7 +1,7 @@
-import { ThemeProvider } from '@mui/material/styles';
-import { memo, useEffect, useLayoutEffect } from 'react';
+import { ThemeProvider } from "@mui/material/styles";
+import { memo, useEffect, useLayoutEffect } from "react";
 
-const useEnhancedEffect = typeof window === 'undefined' ? useEffect : useLayoutEffect;
+const useEnhancedEffect = typeof window === "undefined" ? useEffect : useLayoutEffect;
 
 function CommonTheme(props) {
   const { direction, theme } = props;
@@ -12,8 +12,8 @@ function CommonTheme(props) {
   }, [direction]);
 
   useEffect(() => {
-    document.body.classList.add(mode === 'light' ? 'light' : 'dark');
-    document.body.classList.remove(mode === 'light' ? 'dark' : 'light');
+    document.body.classList.add(mode === "light" ? "light" : "dark");
+    document.body.classList.remove(mode === "light" ? "dark" : "light");
   }, [mode]);
 
   // console.warn('FuseTheme:: rendered',mainTheme);

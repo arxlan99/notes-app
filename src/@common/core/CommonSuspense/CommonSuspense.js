@@ -1,6 +1,6 @@
-import CommonLoading from '@common/core/CommonLoading';
-import PropTypes from 'prop-types';
-import { Suspense } from 'react';
+import CommonLoading from "@common/core/CommonLoading";
+import PropTypes from "prop-types";
+import { Suspense } from "react";
 
 /**
  * React Suspense defaults

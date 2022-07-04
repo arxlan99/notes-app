@@ -1,4 +1,4 @@
-import __ from 'lodash';
+import __ from "lodash";
 
 /**
  * You can extend Lodash with mixins

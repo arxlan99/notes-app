@@ -1,39 +1,39 @@
-import { fuseDark } from 'src/@common/colors';
-import { lightBlue, red } from '@mui/material/colors';
-import { createTheme } from '@mui/material/styles';
-import qs from 'qs';
+import { fuseDark } from "src/@common/colors";
+import { lightBlue, red } from "@mui/material/colors";
+import { createTheme } from "@mui/material/styles";
+import qs from "qs";
 
 const defaultTheme = {
   palette: {
-    mode: 'light',
+    mode: "light",
     text: {
-      primary: 'rgb(17, 24, 39)',
-      secondary: 'rgb(107, 114, 128)',
-      disabled: 'rgb(149, 156, 169)',
+      primary: "rgb(17, 24, 39)",
+      secondary: "rgb(107, 114, 128)",
+      disabled: "rgb(149, 156, 169)",
     },
     common: {
-      black: 'rgb(17, 24, 39)',
-      white: 'rgb(255, 255, 255)',
+      black: "rgb(17, 24, 39)",
+      white: "rgb(255, 255, 255)",
     },
     primary: {
-      light: '#bec1c5',
-      main: '#252f3e',
-      dark: '#0d121b',
-      contrastDefaultColor: 'light',
+      light: "#bec1c5",
+      main: "#252f3e",
+      dark: "#0d121b",
+      contrastDefaultColor: "light",
     },
     secondary: {
-      light: '#bdf2fa',
-      main: '#22d3ee',
-      dark: '#0cb7e2',
+      light: "#bdf2fa",
+      main: "#22d3ee",
+      dark: "#0cb7e2",
     },
     background: {
-      paper: '#FFFFFF',
-      default: '#f6f7f9',
+      paper: "#FFFFFF",
+      default: "#f6f7f9",
     },
     error: {
-      light: '#ffcdd2',
-      main: '#f44336',
-      dark: '#b71c1c',
+      light: "#ffcdd2",
+      main: "#f44336",
+      dark: "#b71c1c",
     },
   },
 };
@@ -43,7 +43,7 @@ const defaultTheme = {
  */
 export const defaultSettings = {
   customScrollbars: true,
-  direction: 'ltr',
+  direction: "ltr",
   theme: {
     main: defaultTheme,
     navbar: defaultTheme,
@@ -72,7 +72,7 @@ export function getParsedQuerySettings() {
  */
 export const defaultThemeOptions = {
   typography: {
-    fontFamily: ['Roboto', '"Helvetica"', 'Arial', 'sans-serif'].join(','),
+    fontFamily: ["Roboto", '"Helvetica"', "Arial", "sans-serif"].join(","),
     fontWeightLight: 300,
     fontWeightRegular: 400,
     fontWeightMedium: 500,
@@ -84,7 +84,7 @@ export const defaultThemeOptions = {
       },
       styleOverrides: {
         root: {
-          backgroundImage: 'none',
+          backgroundImage: "none",
         },
       },
     },
@@ -95,12 +95,12 @@ export const defaultThemeOptions = {
     },
     MuiButton: {
       defaultProps: {
-        variant: 'text',
-        color: 'inherit',
+        variant: "text",
+        color: "inherit",
       },
       styleOverrides: {
         root: {
-          textTransform: 'none',
+          textTransform: "none",
           // lineHeight: 1,
         },
         sizeMedium: {
@@ -110,22 +110,22 @@ export const defaultThemeOptions = {
           maxHeight: 40,
         },
         sizeSmall: {
-          borderRadius: '18px',
+          borderRadius: "18px",
         },
         sizeLarge: {
-          borderRadius: '28px',
+          borderRadius: "28px",
         },
         contained: {
-          boxShadow: 'none',
-          '&:hover, &:focus': {
-            boxShadow: 'none',
+          boxShadow: "none",
+          "&:hover, &:focus": {
+            boxShadow: "none",
           },
         },
       },
     },
     MuiButtonGroup: {
       defaultProps: {
-        color: 'secondary',
+        color: "secondary",
       },
       styleOverrides: {
         contained: {
@@ -136,7 +136,7 @@ export const defaultThemeOptions = {
     MuiTab: {
       styleOverrides: {
         root: {
-          textTransform: 'none',
+          textTransform: "none",
         },
       },
     },
@@ -150,7 +150,7 @@ export const defaultThemeOptions = {
     MuiPaper: {
       styleOverrides: {
         root: {
-          backgroundImage: 'none',
+          backgroundImage: "none",
         },
         rounded: {
           borderRadius: 16,
@@ -166,22 +166,22 @@ export const defaultThemeOptions = {
     },
     MuiTextField: {
       defaultProps: {
-        color: 'secondary',
+        color: "secondary",
       },
     },
     MuiInputLabel: {
       defaultProps: {
-        color: 'secondary',
+        color: "secondary",
       },
     },
     MuiSelect: {
       defaultProps: {
-        color: 'secondary',
+        color: "secondary",
       },
     },
     MuiOutlinedInput: {
       defaultProps: {
-        color: 'secondary',
+        color: "secondary",
       },
     },
     MuiInputBase: {
@@ -196,38 +196,38 @@ export const defaultThemeOptions = {
       styleOverrides: {
         root: {
           borderRadius: 4,
-          '&:before, &:after': {
-            display: 'none',
+          "&:before, &:after": {
+            display: "none",
           },
         },
       },
     },
     MuiSlider: {
       defaultProps: {
-        color: 'secondary',
+        color: "secondary",
       },
     },
     MuiCheckbox: {
       defaultProps: {
-        color: 'secondary',
+        color: "secondary",
       },
     },
     MuiRadio: {
       defaultProps: {
-        color: 'secondary',
+        color: "secondary",
       },
     },
     MuiSwitch: {
       defaultProps: {
-        color: 'secondary',
+        color: "secondary",
       },
     },
     MuiTypography: {
       variants: [
         {
-          props: { color: 'text.secondary' },
+          props: { color: "text.secondary" },
           style: {
-            color: 'text.secondary',
+            color: "text.secondary",
           },
         },
       ],
@@ -240,10 +240,10 @@ export const mustHaveThemeOptions = {
     htmlFontSize: 10,
     fontSize: 14,
     body1: {
-      fontSize: '1.4rem',
+      fontSize: "1.4rem",
     },
     body2: {
-      fontSize: '1.4rem',
+      fontSize: "1.4rem",
     },
   },
 };
@@ -251,7 +251,7 @@ export const mustHaveThemeOptions = {
 export const defaultThemes = {
   default: {
     palette: {
-      mode: 'light',
+      mode: "light",
       primary: fuseDark,
       secondary: {
         light: lightBlue[400],
@@ -261,12 +261,12 @@ export const defaultThemes = {
       error: red,
     },
     status: {
-      danger: 'orange',
+      danger: "orange",
     },
   },
   defaultDark: {
     palette: {
-      mode: 'dark',
+      mode: "dark",
       primary: fuseDark,
       secondary: {
         light: lightBlue[400],
@@ -276,7 +276,7 @@ export const defaultThemes = {
       error: red,
     },
     status: {
-      danger: 'orange',
+      danger: "orange",
     },
   },
 };
@@ -286,27 +286,27 @@ export function extendThemeWithMixins(obj) {
   return {
     border: (width = 1) => ({
       borderWidth: width,
-      borderStyle: 'solid',
+      borderStyle: "solid",
       borderColor: theme.palette.divider,
     }),
     borderLeft: (width = 1) => ({
       borderLeftWidth: width,
-      borderStyle: 'solid',
+      borderStyle: "solid",
       borderColor: theme.palette.divider,
     }),
     borderRight: (width = 1) => ({
       borderRightWidth: width,
-      borderStyle: 'solid',
+      borderStyle: "solid",
       borderColor: theme.palette.divider,
     }),
     borderTop: (width = 1) => ({
       borderTopWidth: width,
-      borderStyle: 'solid',
+      borderStyle: "solid",
       borderColor: theme.palette.divider,
     }),
     borderBottom: (width = 1) => ({
       borderBottomWidth: width,
-      borderStyle: 'solid',
+      borderStyle: "solid",
       borderColor: theme.palette.divider,
     }),
   };

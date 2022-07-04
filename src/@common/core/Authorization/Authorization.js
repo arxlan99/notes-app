@@ -1,9 +1,9 @@
-import FuseUtils from 'src/@common/utils';
-import AppContext from 'app/AppContext';
-import { Component } from 'react';
-import { matchRoutes } from 'react-router-dom';
-import withRouter from 'src/@common/core/withRouter';
-import history from '@history';
+import FuseUtils from "src/@common/utils";
+import AppContext from "app/AppContext";
+import { Component } from "react";
+import { matchRoutes } from "react-router-dom";
+import withRouter from "src/@common/core/withRouter";
+import history from "@history";
 
 let loginRedirectUrl = null;
 
@@ -15,7 +15,7 @@ class Authorization extends Component {
       accessGranted: true,
       routes,
     };
-    this.defaultLoginRedirectUrl = props.loginRedirectUrl || '/';
+    this.defaultLoginRedirectUrl = props.loginRedirectUrl || "/";
   }
 
   componentDidMount() {
@@ -56,7 +56,7 @@ class Authorization extends Component {
         Redirect to Login Page
         */
     if (!userRole || userRole.length === 0) {
-      setTimeout(() => history.push('/sign-in'), 0);
+      setTimeout(() => history.push("/sign-in"), 0);
       loginRedirectUrl = pathname;
     } else {
       /*

@@ -1,7 +1,7 @@
-import { useDispatch, useSelector } from 'react-redux';
-import FuseShortcuts from '@common/core/FuseShortcuts';
-import { selectFlatNavigation } from 'app/store/common/navigationSlice';
-import { selectUserShortcuts, updateUserShortcuts } from 'app/store/userSlice';
+import { useDispatch, useSelector } from "react-redux";
+import FuseShortcuts from "@common/core/FuseShortcuts";
+import { selectFlatNavigation } from "app/store/common/navigationSlice";
+import { selectUserShortcuts, updateUserShortcuts } from "app/store/userSlice";
 
 function NavigationShortcuts(props) {
   const { variant, className } = props;

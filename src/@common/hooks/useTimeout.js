@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef } from "react";
 
 function useTimeout(callback, delay) {
   const callbackRef = useRef(callback);
@@ -10,7 +10,7 @@ function useTimeout(callback, delay) {
   useEffect(() => {
     let timer;
 
-    if (delay && callback && typeof callback === 'function') {
+    if (delay && callback && typeof callback === "function") {
       timer = setTimeout(callbackRef.current, delay || 0);
     }
 
