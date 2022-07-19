@@ -30,7 +30,7 @@ function ToolbarLayout1(props) {
         <Toolbar className="p-0 min-h-48 md:min-h-64">
           <div className="flex flex-1 px-16 text-lg font-medium">
             <Link className="no-underline" to="/">
-              <span>Home</span>
+              <span className="no-underline">Home</span>
             </Link>
           </div>
 
