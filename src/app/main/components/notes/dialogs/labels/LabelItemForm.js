@@ -1,23 +1,23 @@
-import { yupResolver } from "@hookform/resolvers/yup";
-import { Controller, useForm } from "react-hook-form";
-import TextField from "@mui/material/TextField";
-import IconButton from "@mui/material/IconButton";
-import InputAdornment from "@mui/material/InputAdornment";
-import ListItem from "@mui/material/ListItem";
-import clsx from "clsx";
-import { useDispatch } from "react-redux";
-import * as yup from "yup";
-import FuseSvgIcon from "@common/core/SvgIcon";
-import { useEffect } from "react";
-import { useDebounce } from "src/@common/hooks";
-import _ from "@lodash";
-import { removeLabel, updateLabel } from "../../store/labelsSlice";
+import { yupResolver } from '@hookform/resolvers/yup';
+import { Controller, useForm } from 'react-hook-form';
+import TextField from '@mui/material/TextField';
+import IconButton from '@mui/material/IconButton';
+import InputAdornment from '@mui/material/InputAdornment';
+import ListItem from '@mui/material/ListItem';
+import clsx from 'clsx';
+import { useDispatch } from 'react-redux';
+import * as yup from 'yup';
+import FuseSvgIcon from '@common/core/SvgIcon';
+import { useEffect } from 'react';
+import { useDebounce } from 'src/@common/hooks';
+import _ from '@lodash';
+import { removeLabel, updateLabel } from '../../store/labelsSlice';
 
 /**
  * Form Validation Schema
  */
 const schema = yup.object().shape({
-  title: yup.string().required("You must enter a label title"),
+  title: yup.string().required('You must enter a label title'),
 });
 
 function NewLabelForm(props) {
@@ -25,7 +25,7 @@ function NewLabelForm(props) {
   const dispatch = useDispatch();
 
   const { control, formState, handleSubmit, reset, watch } = useForm({
-    mode: "onChange",
+    mode: 'onChange',
     defaultValues: label,
     resolver: yupResolver(schema),
   });
@@ -63,7 +63,7 @@ function NewLabelForm(props) {
           render={({ field }) => (
             <TextField
               {...field}
-              className={clsx("flex flex-1")}
+              className={clsx('flex flex-1')}
               error={!!errors.title}
               helperText={errors?.title?.message}
               placeholder="Create new label"

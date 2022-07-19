@@ -1,32 +1,32 @@
-import List from "@mui/material/List";
-import { styled } from "@mui/material/styles";
-import clsx from "clsx";
-import FuseNavItem from "../NavItem";
+import List from '@mui/material/List';
+import { styled } from '@mui/material/styles';
+import clsx from 'clsx';
+import FuseNavItem from '../NavItem';
 
 const StyledList = styled(List)(({ theme }) => ({
-  "& .fuse-list-item": {
-    "&:hover": {
+  '& .fuse-list-item': {
+    '&:hover': {
       backgroundColor:
-        theme.palette.mode === "dark" ? "rgba(255, 255, 255, 0.05)" : "rgba(0,0,0,.04)",
+        theme.palette.mode === 'dark' ? 'rgba(255, 255, 255, 0.05)' : 'rgba(0,0,0,.04)',
     },
-    "&:focus:not(.active)": {
+    '&:focus:not(.active)': {
       backgroundColor:
-        theme.palette.mode === "dark" ? "rgba(255, 255, 255, 0.06)" : "rgba(0,0,0,.05)",
+        theme.palette.mode === 'dark' ? 'rgba(255, 255, 255, 0.06)' : 'rgba(0,0,0,.05)',
     },
-    padding: "8px 12px 8px 12px",
+    padding: '8px 12px 8px 12px',
     height: 40,
     minHeight: 40,
-    "&.level-0": {
+    '&.level-0': {
       minHeight: 44,
       minminHeight: 44,
     },
-    "& .fuse-list-item-text": {
-      padding: "0 0 0 8px",
+    '& .fuse-list-item-text': {
+      padding: '0 0 0 8px',
     },
   },
-  "&.active-square-list": {
-    "& .fuse-list-item": {
-      borderRadius: "0",
+  '&.active-square-list': {
+    '& .fuse-list-item': {
+      borderRadius: '0',
     },
   },
 }));
@@ -37,9 +37,9 @@ function FuseNavHorizontalLayout1(props) {
   return (
     <StyledList
       className={clsx(
-        "navigation whitespace-nowrap flex p-0",
+        'navigation whitespace-nowrap flex p-0',
         `active-${active}-list`,
-        dense && "dense",
+        dense && 'dense',
         className
       )}>
       {navigation.map((_item) => (

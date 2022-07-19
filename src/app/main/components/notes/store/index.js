@@ -1,6 +1,6 @@
-import { combineReducers } from "@reduxjs/toolkit";
-import labels from "./labelsSlice";
-import notes from "./notesSlice";
+import { combineReducers } from '@reduxjs/toolkit';
+import labels from './labelsSlice';
+import notes from './notesSlice';
 
 const reducer = combineReducers({
   notes,

@@ -1,7 +1,7 @@
-import Typography from "@mui/material/Typography";
-import { motion } from "framer-motion";
-import { Link } from "react-router-dom";
-import Box from "@mui/material/Box";
+import Typography from '@mui/material/Typography';
+import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
+import Box from '@mui/material/Box';
 
 function Error500Page() {
   return (
@@ -18,7 +18,7 @@ function Error500Page() {
             fill="none"
             preserveAspectRatio="xMidYMax slice"
             xmlns="http://www.w3.org/2000/svg"
-            sx={{ color: "secondary.main" }}>
+            sx={{ color: 'secondary.main' }}>
             <g clipPath="url(#clip0)">
               <path
                 d="M0 51.1424C0 128.64 48.6181 191.351 108.701 191.351L0 51.1424Z"

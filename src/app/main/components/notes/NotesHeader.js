@@ -1,11 +1,11 @@
-import React from "react";
+import React from 'react';
 
-import Hidden from "@mui/material/Hidden";
-import IconButton from "@mui/material/IconButton";
-import { useDispatch, useSelector } from "react-redux";
-import FuseSvgIcon from "@common/core/SvgIcon";
-import NotesSearch from "./NotesSearch";
-import { selectVariateDescSize, toggleVariateDescSize } from "./store/notesSlice";
+import Hidden from '@mui/material/Hidden';
+import IconButton from '@mui/material/IconButton';
+import { useDispatch, useSelector } from 'react-redux';
+import FuseSvgIcon from '@common/core/SvgIcon';
+import NotesSearch from './NotesSearch';
+import { selectVariateDescSize, toggleVariateDescSize } from './store/notesSlice';
 
 function NotesHeader(props) {
   const dispatch = useDispatch();

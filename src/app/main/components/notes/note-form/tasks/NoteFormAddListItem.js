@@ -1,28 +1,28 @@
-import { yupResolver } from "@hookform/resolvers/yup";
-import TextField from "@mui/material/TextField";
-import InputAdornment from "@mui/material/InputAdornment";
-import { Controller, useForm } from "react-hook-form";
-import IconButton from "@mui/material/IconButton";
-import ListItem from "@mui/material/ListItem";
-import * as yup from "yup";
-import _ from "@lodash";
-import FuseSvgIcon from "@common/core/SvgIcon";
-import NoteListItemModel from "../../model/NoteListItemModel";
+import { yupResolver } from '@hookform/resolvers/yup';
+import TextField from '@mui/material/TextField';
+import InputAdornment from '@mui/material/InputAdornment';
+import { Controller, useForm } from 'react-hook-form';
+import IconButton from '@mui/material/IconButton';
+import ListItem from '@mui/material/ListItem';
+import * as yup from 'yup';
+import _ from '@lodash';
+import FuseSvgIcon from '@common/core/SvgIcon';
+import NoteListItemModel from '../../model/NoteListItemModel';
 
 const defaultValues = {
-  content: "",
+  content: '',
 };
 
 /**
  * Form Validation Schema
  */
 const schema = yup.object().shape({
-  content: yup.string().required("You must enter a label title"),
+  content: yup.string().required('You must enter a label title'),
 });
 
 function NoteFormAddListItem(props) {
   const { control, formState, handleSubmit, reset } = useForm({
-    mode: "onChange",
+    mode: 'onChange',
     defaultValues,
     resolver: yupResolver(schema),
   });
@@ -52,7 +52,7 @@ function NoteFormAddListItem(props) {
               hiddenLabel
               InputProps={{
                 disableUnderline: true,
-                className: "px-2",
+                className: 'px-2',
                 startAdornment: (
                   <InputAdornment position="start">
                     <IconButton

@@ -1,4 +1,4 @@
-import NotesAppConfig from "./notes/NotesAppConfig";
+import NotesAppConfig from './notes/NotesAppConfig';
 
 const appsConfigs = [NotesAppConfig];
 

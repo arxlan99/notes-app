@@ -1,34 +1,34 @@
-import NavLinkAdapter from "src/@common/core/NavLinkAdapter";
-import { styled } from "@mui/material/styles";
-import List from "@mui/material/List";
-import ListItem from "@mui/material/ListItem";
-import ListItemText from "@mui/material/ListItemText";
-import { motion } from "framer-motion";
-import { useDispatch, useSelector } from "react-redux";
-import FuseSvgIcon from "@common/core/SvgIcon";
-import { openLabelsDialog, selectLabels } from "./store/labelsSlice";
+import NavLinkAdapter from 'src/@common/core/NavLinkAdapter';
+import { styled } from '@mui/material/styles';
+import List from '@mui/material/List';
+import ListItem from '@mui/material/ListItem';
+import ListItemText from '@mui/material/ListItemText';
+import { motion } from 'framer-motion';
+import { useDispatch, useSelector } from 'react-redux';
+import FuseSvgIcon from '@common/core/SvgIcon';
+import { openLabelsDialog, selectLabels } from './store/labelsSlice';
 
 const StyledListItem = styled(ListItem)(({ theme, active }) => ({
-  color: "inherit!important",
-  textDecoration: "none!important",
+  color: 'inherit!important',
+  textDecoration: 'none!important',
   height: 40,
-  width: "100%",
+  width: '100%',
   borderTopRightRadius: 20,
   borderBottomRightRadius: 20,
   paddingLeft: 16,
   paddingRight: 16,
   marginBottom: 8,
   fontWeight: 500,
-  "&.active": {
+  '&.active': {
     backgroundColor:
-      theme.palette.mode === "light" ? "#FEEFC3 !important" : "rgba(255, 255, 255, .1)!important",
-    pointerEvents: "none",
-    "& .list-item-icon": {
+      theme.palette.mode === 'light' ? '#FEEFC3 !important' : 'rgba(255, 255, 255, .1)!important',
+    pointerEvents: 'none',
+    '& .list-item-icon': {
       // color: theme.palette.secondary.main,
-      color: "#000",
+      color: '#000',
     },
   },
-  "& .list-item-icon": {
+  '& .list-item-icon': {
     marginRight: 16,
   },
 }));

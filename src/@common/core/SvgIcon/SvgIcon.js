@@ -1,9 +1,9 @@
-import clsx from "clsx";
-import { forwardRef } from "react";
-import PropTypes from "prop-types";
-import { styled } from "@mui/material/styles";
-import { Box } from "@mui/system";
-import Icon from "@mui/material/Icon";
+import clsx from 'clsx';
+import { forwardRef } from 'react';
+import PropTypes from 'prop-types';
+import { styled } from '@mui/material/styles';
+import { Box } from '@mui/system';
+import Icon from '@mui/material/Icon';
 
 const Root = styled(Box)(({ theme, ...props }) => ({
   width: props.size,
@@ -26,11 +26,11 @@ const Root = styled(Box)(({ theme, ...props }) => ({
 }));
 
 const SvgIcon = forwardRef((props, ref) => {
-  if (!props.children.includes(":")) {
+  if (!props.children.includes(':')) {
     return <Icon ref={ref} {...props} />;
   }
 
-  const iconPath = props.children.replace(":", ".svg#");
+  const iconPath = props.children.replace(':', '.svg#');
 
   return (
     <Root
@@ -39,7 +39,7 @@ const SvgIcon = forwardRef((props, ref) => {
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 100 100"
-      className={clsx("shrink-0 fill-current ", props.className)}
+      className={clsx('shrink-0 fill-current ', props.className)}
       ref={ref}
       size={props.size}
       sx={props.sx}
@@ -54,23 +54,23 @@ SvgIcon.propTypes = {
   size: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
   sx: PropTypes.object,
   color: PropTypes.oneOf([
-    "inherit",
-    "disabled",
-    "primary",
-    "secondary",
-    "action",
-    "error",
-    "info",
-    "success",
-    "warning",
+    'inherit',
+    'disabled',
+    'primary',
+    'secondary',
+    'action',
+    'error',
+    'info',
+    'success',
+    'warning',
   ]),
 };
 
 SvgIcon.defaultProps = {
-  children: "",
+  children: '',
   size: 24,
   sx: {},
-  color: "inherit",
+  color: 'inherit',
 };
 
 export default SvgIcon;

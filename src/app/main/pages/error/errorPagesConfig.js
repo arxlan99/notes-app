@@ -1,8 +1,8 @@
-import { lazy } from "react";
-import { Navigate } from "react-router-dom";
+import { lazy } from 'react';
+import { Navigate } from 'react-router-dom';
 
-const Error404Page = lazy(() => import("./Error404Page"));
-const Error500Page = lazy(() => import("./Error500Page"));
+const Error404Page = lazy(() => import('./Error404Page'));
+const Error500Page = lazy(() => import('./Error500Page'));
 
 const errorPagesConfig = {
   settings: {
@@ -12,18 +12,18 @@ const errorPagesConfig = {
   },
   routes: [
     {
-      path: "pages/error",
+      path: 'pages/error',
       children: [
         {
-          path: "",
+          path: '',
           element: <Navigate to="404" />,
         },
         {
-          path: "404",
+          path: '404',
           element: <Error404Page />,
         },
         {
-          path: "500",
+          path: '500',
           element: <Error500Page />,
         },
       ],

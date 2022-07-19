@@ -1,6 +1,6 @@
-import { createSelector, createSlice } from "@reduxjs/toolkit";
-import i18n from "src/i18n";
-import { setDefaultSettings } from "./common/settingsSlice";
+import { createSelector, createSlice } from '@reduxjs/toolkit';
+import i18n from 'src/i18n';
+import { setDefaultSettings } from './common/settingsSlice';
 
 export const changeLanguage = (languageId) => (dispatch, getState) => {
   const { direction } = getState().fuse.settings.defaults;
@@ -23,13 +23,13 @@ export const changeLanguage = (languageId) => (dispatch, getState) => {
 };
 
 const i18nSlice = createSlice({
-  name: "i18n",
+  name: 'i18n',
   initialState: {
     language: i18n.options.lng,
     languages: [
-      { id: "en", title: "English", flag: "US" },
-      { id: "tr", title: "Turkish", flag: "TR" },
-      { id: "ar", title: "Arabic", flag: "SA" },
+      { id: 'en', title: 'English', flag: 'US' },
+      { id: 'tr', title: 'Turkish', flag: 'TR' },
+      { id: 'ar', title: 'Arabic', flag: 'SA' },
     ],
   },
   reducers: {

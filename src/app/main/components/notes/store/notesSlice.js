@@ -3,23 +3,23 @@ import {
   createEntityAdapter,
   createSelector,
   createSlice,
-} from "@reduxjs/toolkit";
-import axios from "axios";
+} from '@reduxjs/toolkit';
+import axios from 'axios';
 
-export const getNotes = createAsyncThunk("notesApp/notes/getNotes", async (routeParams) => {
+export const getNotes = createAsyncThunk('notesApp/notes/getNotes', async (routeParams) => {
   const { filter, id } = routeParams;
 
   let url;
 
-  if (routeParams.filter === "labels") {
+  if (routeParams.filter === 'labels') {
     url = `/api/notes/labels/${id}`;
   }
 
-  if (routeParams.filter === "archive") {
+  if (routeParams.filter === 'archive') {
     url = `/api/notes/archive`;
   }
 
-  if (routeParams.filter === "reminders") {
+  if (routeParams.filter === 'reminders') {
     url = `/api/notes/reminders`;
   }
 
@@ -33,14 +33,14 @@ export const getNotes = createAsyncThunk("notesApp/notes/getNotes", async (route
   return data;
 });
 
-export const createNote = createAsyncThunk("notesApp/notes/createNote", async (note) => {
-  const response = await axios.post("/api/notes", note);
+export const createNote = createAsyncThunk('notesApp/notes/createNote', async (note) => {
+  const response = await axios.post('/api/notes', note);
   const data = await response.data;
 
   return data;
 });
 
-export const updateNote = createAsyncThunk("notesApp/notes/updateNote", async (note) => {
+export const updateNote = createAsyncThunk('notesApp/notes/updateNote', async (note) => {
   const response = await axios.put(`/api/notes/${note.id}`, note);
   const data = await response.data;
 
@@ -48,7 +48,7 @@ export const updateNote = createAsyncThunk("notesApp/notes/updateNote", async (n
 });
 
 export const removeNote = createAsyncThunk(
-  "notesApp/notes/removeNote",
+  'notesApp/notes/removeNote',
   async (id, { dispatch, getState }) => {
     const response = await axios.delete(`/api/notes/${id}`);
     const data = await response.data;
@@ -68,9 +68,9 @@ export const {
 } = notesAdapter.getSelectors((state) => state.notesApp.notes);
 
 const notesSlice = createSlice({
-  name: "notesApp/notes",
+  name: 'notesApp/notes',
   initialState: notesAdapter.getInitialState({
-    searchText: "",
+    searchText: '',
     noteDialogId: null,
     variateDescSize: true,
   }),
@@ -79,10 +79,10 @@ const notesSlice = createSlice({
       reducer: (state, action) => {
         state.searchText = action.payload;
       },
-      prepare: (event) => ({ payload: event.target.value || "" }),
+      prepare: (event) => ({ payload: event.target.value || '' }),
     },
     resetNotesSearchText: (state, action) => {
-      state.searchText = "";
+      state.searchText = '';
     },
     toggleVariateDescSize: (state, action) => {
       // state.variateDescSize = !state.variateDescSize;
@@ -120,7 +120,7 @@ export const selectDialogNoteId = ({ notesApp }) => notesApp.notes.noteDialogId;
 export const selectDialogNote = createSelector(
   [selectDialogNoteId, selectNotesEntities],
   (noteId, notesEntities) => {
-    console.log("noteId--------", noteId);
+    console.log('noteId--------', noteId);
     return notesEntities[noteId];
   }
 );

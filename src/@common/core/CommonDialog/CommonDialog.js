@@ -1,10 +1,10 @@
-import Dialog from "@mui/material/Dialog";
-import { useDispatch, useSelector } from "react-redux";
+import Dialog from '@mui/material/Dialog';
+import { useDispatch, useSelector } from 'react-redux';
 import {
   closeDialog,
   selectFuseDialogOptions,
   selectFuseDialogState,
-} from "app/store/common/dialogSlice";
+} from 'app/store/common/dialogSlice';
 
 function CommonDialog(props) {
   const dispatch = useDispatch();
@@ -17,7 +17,7 @@ function CommonDialog(props) {
       onClose={(ev) => dispatch(closeDialog())}
       aria-labelledby="fuse-dialog-title"
       classes={{
-        paper: "rounded-8",
+        paper: 'rounded-8',
       }}
       {...options}
     />

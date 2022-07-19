@@ -1,8 +1,8 @@
-const plugin = require("tailwindcss/plugin");
+const plugin = require('tailwindcss/plugin');
 
 const iconSize = plugin(
   ({ addUtilities, theme, e, variants }) => {
-    const values = theme("iconSize");
+    const values = theme('iconSize');
 
     addUtilities(
       Object.entries(values).map(([key, value]) => ({
@@ -19,17 +19,17 @@ const iconSize = plugin(
           },
         },
       })),
-      variants("iconSize")
+      variants('iconSize')
     );
   },
   {
     theme: {
       iconSize: (theme) => ({
-        ...theme("spacing"),
+        ...theme('spacing'),
       }),
     },
     variants: {
-      iconSize: ["responsive"],
+      iconSize: ['responsive'],
     },
   }
 );

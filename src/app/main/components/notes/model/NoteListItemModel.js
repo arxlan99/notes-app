@@ -1,12 +1,12 @@
-import FuseUtils from "src/@common/utils";
-import _ from "@lodash";
+import FuseUtils from 'src/@common/utils';
+import _ from '@lodash';
 
 function NoteListItemModel(data) {
   data = data || {};
 
   return _.defaults(data, {
     id: FuseUtils.generateGUID(),
-    content: "",
+    content: '',
     completed: false,
   });
 }

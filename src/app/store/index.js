@@ -1,16 +1,16 @@
-import { configureStore } from "@reduxjs/toolkit";
-import createReducer from "./rootReducer";
+import { configureStore } from '@reduxjs/toolkit';
+import createReducer from './rootReducer';
 
-if (process.env.NODE_ENV === "development" && module.hot) {
-  module.hot.accept("./rootReducer", () => {
-    const newRootReducer = require("./rootReducer").default;
+if (process.env.NODE_ENV === 'development' && module.hot) {
+  module.hot.accept('./rootReducer', () => {
+    const newRootReducer = require('./rootReducer').default;
     store.replaceReducer(newRootReducer.createReducer());
   });
 }
 
 const middlewares = [];
 
-if (process.env.NODE_ENV === "development") {
+if (process.env.NODE_ENV === 'development') {
   const { createLogger } = require(`redux-logger`);
   const logger = createLogger({ collapsed: (getState, action, logEntry) => !logEntry.error });
 
@@ -24,7 +24,7 @@ const store = configureStore({
       immutableCheck: false,
       serializableCheck: false,
     }).concat(middlewares),
-  devTools: process.env.NODE_ENV === "development",
+  devTools: process.env.NODE_ENV === 'development',
 });
 
 store.asyncReducers = {};

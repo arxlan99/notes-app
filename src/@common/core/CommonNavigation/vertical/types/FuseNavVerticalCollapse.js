@@ -1,37 +1,37 @@
-import NavLinkAdapter from "src/@common/core/NavLinkAdapter";
-import { alpha, styled } from "@mui/material/styles";
-import Collapse from "@mui/material/Collapse";
-import IconButton from "@mui/material/IconButton";
-import ListItem from "@mui/material/ListItem";
-import ListItemText from "@mui/material/ListItemText";
-import clsx from "clsx";
-import PropTypes from "prop-types";
-import { useEffect, useMemo, useState } from "react";
-import { useLocation } from "react-router-dom";
-import List from "@mui/material/List";
-import FuseNavBadge from "../../NavBadge";
-import FuseNavItem from "../../NavItem";
-import FuseSvgIcon from "../../../SvgIcon";
+import NavLinkAdapter from 'src/@common/core/NavLinkAdapter';
+import { alpha, styled } from '@mui/material/styles';
+import Collapse from '@mui/material/Collapse';
+import IconButton from '@mui/material/IconButton';
+import ListItem from '@mui/material/ListItem';
+import ListItemText from '@mui/material/ListItemText';
+import clsx from 'clsx';
+import PropTypes from 'prop-types';
+import { useEffect, useMemo, useState } from 'react';
+import { useLocation } from 'react-router-dom';
+import List from '@mui/material/List';
+import FuseNavBadge from '../../NavBadge';
+import FuseNavItem from '../../NavItem';
+import FuseSvgIcon from '../../../SvgIcon';
 
 const Root = styled(List)(({ theme, ...props }) => ({
   padding: 0,
-  "&.open": {},
-  "& > .fuse-list-item": {
+  '&.open': {},
+  '& > .fuse-list-item': {
     minHeight: 44,
-    width: "100%",
-    borderRadius: "6px",
-    margin: "0 0 4px 0",
+    width: '100%',
+    borderRadius: '6px',
+    margin: '0 0 4px 0',
     paddingRight: 16,
     paddingLeft: props.itempadding > 80 ? 80 : props.itempadding,
     paddingTop: 10,
     paddingBottom: 10,
     color: alpha(theme.palette.text.primary, 0.7),
-    "&:hover": {
+    '&:hover': {
       color: theme.palette.text.primary,
     },
-    "& > .fuse-list-item-icon": {
+    '& > .fuse-list-item-icon': {
       marginRight: 16,
-      color: "inherit",
+      color: 'inherit',
     },
   },
 }));
@@ -78,9 +78,9 @@ function FuseNavVerticalCollapse(props) {
 
   return useMemo(
     () => (
-      <Root className={clsx(open && "open")} itempadding={itempadding} sx={item.sx}>
+      <Root className={clsx(open && 'open')} itempadding={itempadding} sx={item.sx}>
         <ListItem
-          component={item.url ? NavLinkAdapter : "li"}
+          component={item.url ? NavLinkAdapter : 'li'}
           button
           className="fuse-list-item"
           onClick={() => setOpen(!open)}
@@ -90,7 +90,7 @@ function FuseNavVerticalCollapse(props) {
           disabled={item.disabled}>
           {item.icon && (
             <FuseSvgIcon
-              className={clsx("fuse-list-item-icon shrink-0", item.iconClass)}
+              className={clsx('fuse-list-item-icon shrink-0', item.iconClass)}
               color="action">
               {item.icon}
             </FuseSvgIcon>
@@ -101,9 +101,9 @@ function FuseNavVerticalCollapse(props) {
             primary={item.title}
             secondary={item.subtitle}
             classes={{
-              primary: "text-13 font-medium fuse-list-item-text-primary truncate",
+              primary: 'text-13 font-medium fuse-list-item-text-primary truncate',
               secondary:
-                "text-11 font-medium fuse-list-item-text-secondary leading-normal truncate",
+                'text-11 font-medium fuse-list-item-text-secondary leading-normal truncate',
             }}
           />
 
@@ -115,7 +115,7 @@ function FuseNavVerticalCollapse(props) {
             onClick={(ev) => ev.preventDefault()}
             size="large">
             <FuseSvgIcon size={16} className="arrow-icon" color="inherit">
-              {open ? "heroicons-solid:chevron-down" : "heroicons-solid:chevron-right"}
+              {open ? 'heroicons-solid:chevron-down' : 'heroicons-solid:chevron-right'}
             </FuseSvgIcon>
           </IconButton>
         </ListItem>

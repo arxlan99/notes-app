@@ -1,5 +1,5 @@
-import IconButton from "@mui/material/IconButton";
-import FuseSvgIcon from "@common/core/SvgIcon";
+import IconButton from '@mui/material/IconButton';
+import FuseSvgIcon from '@common/core/SvgIcon';
 
 function NoteFormUploadImage(props) {
   function handleChange(e) {
@@ -18,7 +18,7 @@ function NoteFormUploadImage(props) {
     };
 
     reader.onerror = () => {
-      console.log("error on load image");
+      console.log('error on load image');
     };
   }
 

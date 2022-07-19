@@ -1,40 +1,40 @@
-import NavLinkAdapter from "src/@common/core/NavLinkAdapter";
-import { styled, useTheme } from "@mui/material/styles";
-import { useDebounce } from "src/@common/hooks";
-import Grow from "@mui/material/Grow";
-import IconButton from "@mui/material/IconButton";
-import ListItem from "@mui/material/ListItem";
-import ListItemText from "@mui/material/ListItemText";
-import Paper from "@mui/material/Paper";
-import clsx from "clsx";
-import PropTypes from "prop-types";
-import { memo, useMemo, useState } from "react";
-import * as ReactDOM from "react-dom";
-import { Manager, Popper, Reference } from "react-popper";
-import withRouter from "src/@common/core/withRouter";
-import FuseNavItem from "../../NavItem";
-import FuseSvgIcon from "../../../SvgIcon";
+import NavLinkAdapter from 'src/@common/core/NavLinkAdapter';
+import { styled, useTheme } from '@mui/material/styles';
+import { useDebounce } from 'src/@common/hooks';
+import Grow from '@mui/material/Grow';
+import IconButton from '@mui/material/IconButton';
+import ListItem from '@mui/material/ListItem';
+import ListItemText from '@mui/material/ListItemText';
+import Paper from '@mui/material/Paper';
+import clsx from 'clsx';
+import PropTypes from 'prop-types';
+import { memo, useMemo, useState } from 'react';
+import * as ReactDOM from 'react-dom';
+import { Manager, Popper, Reference } from 'react-popper';
+import withRouter from 'src/@common/core/withRouter';
+import FuseNavItem from '../../NavItem';
+import FuseSvgIcon from '../../../SvgIcon';
 
 const StyledListItem = styled(ListItem)(({ theme }) => ({
   color: theme.palette.text.primary,
-  "&.active, &.active:hover, &.active:focus": {
+  '&.active, &.active:hover, &.active:focus': {
     backgroundColor: `${theme.palette.secondary.main}!important`,
     color: `${theme.palette.secondary.contrastText}!important`,
-    "& .fuse-list-item-text-primary": {
-      color: "inherit",
+    '& .fuse-list-item-text-primary': {
+      color: 'inherit',
     },
-    "& .fuse-list-item-icon": {
-      color: "inherit",
+    '& .fuse-list-item-icon': {
+      color: 'inherit',
     },
   },
-  "& .fuse-list-item-text": {
-    padding: "0 0 0 16px",
+  '& .fuse-list-item-text': {
+    padding: '0 0 0 16px',
   },
-  "&.level-0": {
+  '&.level-0': {
     minHeight: 44,
     borderRadius: 4,
-    "&:hover": {
-      background: "transparent",
+    '&:hover': {
+      background: 'transparent',
     },
   },
 }));
@@ -69,12 +69,12 @@ function FuseNavHorizontalGroup(props) {
   }, 150);
 
   return useMemo(() => {
-    let popperPlacement = "left";
+    let popperPlacement = 'left';
 
     if (nestedLevel === 0) {
-      popperPlacement = theme.direction === "ltr" ? "bottom-start" : "bottom-end";
+      popperPlacement = theme.direction === 'ltr' ? 'bottom-start' : 'bottom-end';
     } else {
-      popperPlacement = theme.direction === "ltr" ? "right" : "left";
+      popperPlacement = theme.direction === 'ltr' ? 'right' : 'left';
     }
 
     return (
@@ -85,16 +85,16 @@ function FuseNavHorizontalGroup(props) {
               <StyledListItem
                 button
                 className={clsx(
-                  "fuse-list-item",
-                  "relative",
+                  'fuse-list-item',
+                  'relative',
                   `level-${nestedLevel}`,
-                  isUrlInChildren(item, props.location.pathname) && "active"
+                  isUrlInChildren(item, props.location.pathname) && 'active'
                 )}
                 onMouseEnter={() => handleToggle(true)}
                 onMouseLeave={() => handleToggle(false)}
-                aria-owns={opened ? "menu-fuse-list-grow" : null}
+                aria-owns={opened ? 'menu-fuse-list-grow' : null}
                 aria-haspopup="true"
-                component={item.url ? NavLinkAdapter : "li"}
+                component={item.url ? NavLinkAdapter : 'li'}
                 to={item.url}
                 end={item.end}
                 role="button"
@@ -103,7 +103,7 @@ function FuseNavHorizontalGroup(props) {
                 {item.icon && (
                   <FuseSvgIcon
                     color="action"
-                    className={clsx("fuse-list-item-icon shrink-0", item.iconClass)}>
+                    className={clsx('fuse-list-item-icon shrink-0', item.iconClass)}>
                     {item.icon}
                   </FuseSvgIcon>
                 )}
@@ -111,7 +111,7 @@ function FuseNavHorizontalGroup(props) {
                 <ListItemText
                   className="fuse-list-item-text"
                   primary={item.title}
-                  classes={{ primary: "text-13 truncate" }}
+                  classes={{ primary: 'text-13 truncate' }}
                 />
 
                 {nestedLevel > 0 && (
@@ -121,9 +121,9 @@ function FuseNavHorizontalGroup(props) {
                     color="inherit"
                     size="large">
                     <FuseSvgIcon size={16} className="arrow-icon">
-                      {theme.direction === "ltr"
-                        ? "heroicons-outline:arrow-sm-right"
-                        : "heroicons-outline:arrow-sm-left"}
+                      {theme.direction === 'ltr'
+                        ? 'heroicons-outline:arrow-sm-right'
+                        : 'heroicons-outline:arrow-sm-left'}
                     </FuseSvgIcon>
                   </IconButton>
                 )}
@@ -142,14 +142,14 @@ function FuseNavHorizontalGroup(props) {
                     zIndex: 999 + nestedLevel,
                   }}
                   data-placement={placement}
-                  className={clsx("z-999", !opened && "pointer-events-none")}>
-                  <Grow in={opened} id="menu-fuse-list-grow" style={{ transformOrigin: "0 0 0" }}>
+                  className={clsx('z-999', !opened && 'pointer-events-none')}>
+                  <Grow in={opened} id="menu-fuse-list-grow" style={{ transformOrigin: '0 0 0' }}>
                     <Paper
                       className="rounded-8"
                       onMouseEnter={() => handleToggle(true)}
                       onMouseLeave={() => handleToggle(false)}>
                       {item.children && (
-                        <ul className={clsx("popper-navigation-list", dense && "dense", "px-0")}>
+                        <ul className={clsx('popper-navigation-list', dense && 'dense', 'px-0')}>
                           {item.children.map((_item) => (
                             <FuseNavItem
                               key={_item.id}
@@ -167,7 +167,7 @@ function FuseNavHorizontalGroup(props) {
               )
             }
           </Popper>,
-          document.querySelector("#root")
+          document.querySelector('#root')
         )}
       </Manager>
     );

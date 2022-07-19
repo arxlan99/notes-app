@@ -1,8 +1,8 @@
-import { createEntityAdapter, createSelector, createSlice } from "@reduxjs/toolkit";
-import navigationConfig from "app/configs/navigationConfig";
-import FuseUtils from "src/@common/utils";
-import i18next from "i18next";
-import _ from "@lodash";
+import { createEntityAdapter, createSelector, createSlice } from '@reduxjs/toolkit';
+import navigationConfig from 'app/configs/navigationConfig';
+import FuseUtils from 'src/@common/utils';
+import i18next from 'i18next';
+import _ from '@lodash';
 
 const navigationAdapter = createEntityAdapter();
 const emptyInitialState = navigationAdapter.getInitialState();
@@ -39,7 +39,7 @@ export const {
 } = navigationAdapter.getSelectors((state) => state.fuse.navigation);
 
 const navigationSlice = createSlice({
-  name: "navigation",
+  name: 'navigation',
   initialState,
   reducers: {
     setNavigation: navigationAdapter.setAll,

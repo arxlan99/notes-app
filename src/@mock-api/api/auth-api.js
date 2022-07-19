@@ -1,17 +1,17 @@
-import FuseUtils from "src/@common/utils";
-import _ from "@lodash";
-import Base64 from "crypto-js/enc-base64";
-import HmacSHA256 from "crypto-js/hmac-sha256";
-import Utf8 from "crypto-js/enc-utf8";
-import jwtDecode from "jwt-decode";
-import mock from "../mock";
-import mockApi from "../mock-api.json";
+import FuseUtils from 'src/@common/utils';
+import _ from '@lodash';
+import Base64 from 'crypto-js/enc-base64';
+import HmacSHA256 from 'crypto-js/hmac-sha256';
+import Utf8 from 'crypto-js/enc-utf8';
+import jwtDecode from 'jwt-decode';
+import mock from '../mock';
+import mockApi from '../mock-api.json';
 
 let usersApi = mockApi.components.examples.auth_users.value;
 
 /* eslint-disable camelcase */
 
-mock.onGet("/api/auth/sign-in").reply(async (config) => {
+mock.onGet('/api/auth/sign-in').reply(async (config) => {
   const data = JSON.parse(config.data);
   const { email, password } = data;
   const user = _.cloneDeep(usersApi.find((_user) => _user.data.email === email));
@@ -20,15 +20,15 @@ mock.onGet("/api/auth/sign-in").reply(async (config) => {
 
   if (!user) {
     error.push({
-      type: "email",
-      message: "Check your email address",
+      type: 'email',
+      message: 'Check your email address',
     });
   }
 
   if (user && user.password !== password) {
     error.push({
-      type: "password",
-      message: "Check your password",
+      type: 'password',
+      message: 'Check your password',
     });
   }
 
@@ -48,7 +48,7 @@ mock.onGet("/api/auth/sign-in").reply(async (config) => {
   return [200, { error }];
 });
 
-mock.onGet("/api/auth/access-token").reply((config) => {
+mock.onGet('/api/auth/access-token').reply((config) => {
   const data = JSON.parse(config.data);
   const { access_token } = data;
 
@@ -68,11 +68,11 @@ mock.onGet("/api/auth/access-token").reply((config) => {
 
     return [200, response];
   }
-  const error = "Invalid access token detected";
+  const error = 'Invalid access token detected';
   return [401, { error }];
 });
 
-mock.onPost("/api/auth/sign-up").reply((request) => {
+mock.onPost('/api/auth/sign-up').reply((request) => {
   const data = JSON.parse(request.data);
   const { displayName, password, email } = data;
   const isEmailExists = usersApi.find((_user) => _user.data.email === email);
@@ -80,20 +80,20 @@ mock.onPost("/api/auth/sign-up").reply((request) => {
 
   if (isEmailExists) {
     error.push({
-      type: "email",
-      message: "The email address is already in use",
+      type: 'email',
+      message: 'The email address is already in use',
     });
   }
 
   if (error.length === 0) {
     const newUser = {
       uuid: FuseUtils.generateGUID(),
-      from: "custom-db",
+      from: 'custom-db',
       password,
-      role: "admin",
+      role: 'admin',
       data: {
         displayName,
-        photoURL: "assets/images/avatars/Abbott.jpg",
+        photoURL: 'assets/images/avatars/Abbott.jpg',
         email,
         settings: {},
         shortcuts: [],
@@ -118,7 +118,7 @@ mock.onPost("/api/auth/sign-up").reply((request) => {
   return [200, { error }];
 });
 
-mock.onPost("/api/auth/user/update").reply((config) => {
+mock.onPost('/api/auth/user/update').reply((config) => {
   const data = JSON.parse(config.data);
   const { user } = data;
 
@@ -137,18 +137,18 @@ mock.onPost("/api/auth/user/update").reply((config) => {
  * !! Created for Demonstration Purposes, cannot be used for PRODUCTION
  */
 
-const jwtSecret = "some-secret-code-goes-here";
+const jwtSecret = 'some-secret-code-goes-here';
 
 function base64url(source) {
   // Encode in classical base64
   let encodedSource = Base64.stringify(source);
 
   // Remove padding equal characters
-  encodedSource = encodedSource.replace(/=+$/, "");
+  encodedSource = encodedSource.replace(/=+$/, '');
 
   // Replace characters according to base64url specifications
-  encodedSource = encodedSource.replace(/\+/g, "-");
-  encodedSource = encodedSource.replace(/\//g, "_");
+  encodedSource = encodedSource.replace(/\+/g, '-');
+  encodedSource = encodedSource.replace(/\//g, '_');
 
   // Return the base64 encoded string
   return encodedSource;
@@ -157,8 +157,8 @@ function base64url(source) {
 function generateJWTToken(tokenPayload) {
   // Define token header
   const header = {
-    alg: "HS256",
-    typ: "JWT",
+    alg: 'HS256',
+    typ: 'JWT',
   };
 
   // Calculate the issued at and expiration dates
@@ -169,7 +169,7 @@ function generateJWTToken(tokenPayload) {
   // Define token payload
   const payload = {
     iat,
-    iss: "Fuse",
+    iss: 'Fuse',
     exp,
     ...tokenPayload,
   };
@@ -193,7 +193,7 @@ function generateJWTToken(tokenPayload) {
 
 function verifyJWTToken(token) {
   // Split the token into parts
-  const parts = token.split(".");
+  const parts = token.split('.');
   const header = parts[0];
   const payload = parts[1];
   const signature = parts[2];

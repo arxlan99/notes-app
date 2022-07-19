@@ -1,4 +1,4 @@
-import errorPagesConfig from "./error/errorPagesConfig";
+import errorPagesConfig from './error/errorPagesConfig';
 
 const pagesConfigs = [errorPagesConfig];
 

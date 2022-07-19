@@ -1,44 +1,44 @@
-import { yupResolver } from "@hookform/resolvers/yup";
-import { Controller, useForm } from "react-hook-form";
-import Button from "@mui/material/Button";
-import Checkbox from "@mui/material/Checkbox";
-import FormControl from "@mui/material/FormControl";
-import FormControlLabel from "@mui/material/FormControlLabel";
-import TextField from "@mui/material/TextField";
-import Typography from "@mui/material/Typography";
-import { Link } from "react-router-dom";
-import * as yup from "yup";
-import _ from "@lodash";
-import Box from "@mui/material/Box";
-import Paper from "@mui/material/Paper";
-import FormHelperText from "@mui/material/FormHelperText";
-import jwtService from "../../auth/services/jwtService";
+import { yupResolver } from '@hookform/resolvers/yup';
+import { Controller, useForm } from 'react-hook-form';
+import Button from '@mui/material/Button';
+import Checkbox from '@mui/material/Checkbox';
+import FormControl from '@mui/material/FormControl';
+import FormControlLabel from '@mui/material/FormControlLabel';
+import TextField from '@mui/material/TextField';
+import Typography from '@mui/material/Typography';
+import { Link } from 'react-router-dom';
+import * as yup from 'yup';
+import _ from '@lodash';
+import Box from '@mui/material/Box';
+import Paper from '@mui/material/Paper';
+import FormHelperText from '@mui/material/FormHelperText';
+import jwtService from '../../auth/services/jwtService';
 
 /**
  * Form Validation Schema
  */
 const schema = yup.object().shape({
-  displayName: yup.string().required("You must enter display name"),
-  email: yup.string().email("You must enter a valid email").required("You must enter a email"),
+  displayName: yup.string().required('You must enter display name'),
+  email: yup.string().email('You must enter a valid email').required('You must enter a email'),
   password: yup
     .string()
-    .required("Please enter your password.")
-    .min(8, "Password is too short - should be 8 chars minimum."),
-  passwordConfirm: yup.string().oneOf([yup.ref("password"), null], "Passwords must match"),
-  acceptTermsConditions: yup.boolean().oneOf([true], "The terms and conditions must be accepted."),
+    .required('Please enter your password.')
+    .min(8, 'Password is too short - should be 8 chars minimum.'),
+  passwordConfirm: yup.string().oneOf([yup.ref('password'), null], 'Passwords must match'),
+  acceptTermsConditions: yup.boolean().oneOf([true], 'The terms and conditions must be accepted.'),
 });
 
 const defaultValues = {
-  displayName: "",
-  email: "",
-  password: "",
-  passwordConfirm: "",
+  displayName: '',
+  email: '',
+  password: '',
+  passwordConfirm: '',
   acceptTermsConditions: false,
 };
 
 function SignUpPage() {
   const { control, formState, handleSubmit, reset } = useForm({
-    mode: "onChange",
+    mode: 'onChange',
     defaultValues,
     resolver: yupResolver(schema),
   });
@@ -58,7 +58,7 @@ function SignUpPage() {
       .catch((_errors) => {
         _errors.forEach((error) => {
           setError(error.type, {
-            type: "manual",
+            type: 'manual',
             message: error.message,
           });
         });
@@ -187,7 +187,7 @@ function SignUpPage() {
 
       <Box
         className="relative hidden md:flex flex-auto items-center justify-center h-full p-64 lg:px-112 overflow-hidden"
-        sx={{ backgroundColor: "primary.main" }}>
+        sx={{ backgroundColor: 'primary.main' }}>
         <svg
           className="absolute inset-0 pointer-events-none"
           viewBox="0 0 960 540"
@@ -197,7 +197,7 @@ function SignUpPage() {
           xmlns="http://www.w3.org/2000/svg">
           <Box
             component="g"
-            sx={{ color: "primary.light" }}
+            sx={{ color: 'primary.light' }}
             className="opacity-20"
             fill="none"
             stroke="currentColor"
@@ -209,7 +209,7 @@ function SignUpPage() {
         <Box
           component="svg"
           className="absolute -top-64 -right-64 opacity-20"
-          sx={{ color: "primary.light" }}
+          sx={{ color: 'primary.light' }}
           viewBox="0 0 220 192"
           width="220px"
           height="192px"

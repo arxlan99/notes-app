@@ -1,5 +1,5 @@
-import { Component, forwardRef } from "react";
-import withRouter from "src/@common/core/withRouter";
+import { Component, forwardRef } from 'react';
+import withRouter from 'src/@common/core/withRouter';
 
 const withRouterAndRef = (WrappedComponent) => {
   class InnerComponentWithRef extends Component {

@@ -1,5 +1,5 @@
-import { memo } from "react";
-import Box from "@mui/material/Box";
+import { memo } from 'react';
+import Box from '@mui/material/Box';
 
 function SplashScreen() {
   return (
@@ -10,8 +10,8 @@ function SplashScreen() {
       <Box
         id="spinner"
         sx={{
-          "& > div": {
-            backgroundColor: "palette.secondary.main",
+          '& > div': {
+            backgroundColor: 'palette.secondary.main',
           },
         }}>
         <div className="bounce1" />

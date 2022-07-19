@@ -1,17 +1,17 @@
-import { useDeepCompareEffect } from "src/@common/hooks";
-import _ from "@lodash";
-import AppContext from "app/AppContext";
+import { useDeepCompareEffect } from 'src/@common/hooks';
+import _ from '@lodash';
+import AppContext from 'app/AppContext';
 import {
   generateSettings,
   selectFuseCurrentSettings,
   selectFuseDefaultSettings,
   setSettings,
-} from "app/store/common/settingsSlice";
-import { memo, useCallback, useContext, useMemo, useRef } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { matchRoutes, useLocation } from "react-router-dom";
-import GlobalStyles from "@mui/material/GlobalStyles";
-import { alpha } from "@mui/material/styles";
+} from 'app/store/common/settingsSlice';
+import { memo, useCallback, useContext, useMemo, useRef } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { matchRoutes, useLocation } from 'react-router-dom';
+import GlobalStyles from '@mui/material/GlobalStyles';
+import { alpha } from '@mui/material/styles';
 
 const inputGlobalStyles = (
   <GlobalStyles
@@ -32,25 +32,25 @@ const inputGlobalStyles = (
         borderRadius: 2,
         lineHeight: 1.7,
       }, */
-      "table.simple tbody tr td": {
+      'table.simple tbody tr td': {
         borderColor: theme.palette.divider,
       },
-      "table.simple thead tr th": {
+      'table.simple thead tr th': {
         borderColor: theme.palette.divider,
       },
-      "a:not([role=button]):not(.MuiButtonBase-root)": {
+      'a:not([role=button]):not(.MuiButtonBase-root)': {
         color: theme.palette.secondary.main,
-        textDecoration: "underline",
-        "&:hover": {},
+        textDecoration: 'underline',
+        '&:hover': {},
       },
-      "a.link, a:not([role=button])[target=_blank]": {
+      'a.link, a:not([role=button])[target=_blank]': {
         background: alpha(theme.palette.secondary.main, 0.2),
-        color: "inherit",
+        color: 'inherit',
         borderBottom: `1px solid ${theme.palette.divider}`,
-        textDecoration: "none",
-        "&:hover": {
+        textDecoration: 'none',
+        '&:hover': {
           background: alpha(theme.palette.secondary.main, 0.3),
-          textDecoration: "none",
+          textDecoration: 'none',
         },
       },
       '[class^="border"]': {
@@ -66,14 +66,14 @@ const inputGlobalStyles = (
         borderColor: theme.palette.divider,
       },
 
-      "::-webkit-scrollbar-thumb": {
+      '::-webkit-scrollbar-thumb': {
         boxShadow: `inset 0 0 0 20px ${
-          theme.palette.mode === "light" ? "rgba(0, 0, 0, 0.24)" : "rgba(255, 255, 255, 0.24)"
+          theme.palette.mode === 'light' ? 'rgba(0, 0, 0, 0.24)' : 'rgba(255, 255, 255, 0.24)'
         }`,
       },
-      "::-webkit-scrollbar-thumb:active": {
+      '::-webkit-scrollbar-thumb:active': {
         boxShadow: `inset 0 0 0 20px ${
-          theme.palette.mode === "light" ? "rgba(0, 0, 0, 0.37)" : "rgba(255, 255, 255, 0.37)"
+          theme.palette.mode === 'light' ? 'rgba(0, 0, 0, 0.37)' : 'rgba(255, 255, 255, 0.37)'
         }`,
       },
     })}

@@ -1,13 +1,13 @@
-import _ from "@lodash";
+import _ from '@lodash';
 
 function NoteModel(data) {
   data = data || {};
 
   return _.defaults(data, {
-    title: "",
-    content: "",
+    title: '',
+    content: '',
     tasks: [],
-    image: "",
+    image: '',
     reminder: null,
     labels: [],
     archived: false,

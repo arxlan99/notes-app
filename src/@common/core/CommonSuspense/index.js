@@ -1,1 +1,1 @@
-export { default } from "./CommonSuspense";
+export { default } from './CommonSuspense';

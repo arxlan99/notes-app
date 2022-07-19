@@ -1,24 +1,24 @@
-import NavLinkAdapter from "src/@common/core/NavLinkAdapter";
-import { alpha, styled } from "@mui/material/styles";
-import clsx from "clsx";
-import PropTypes from "prop-types";
-import { useMemo } from "react";
-import ListItem from "@mui/material/ListItem";
-import { ListItemText } from "@mui/material";
-import FuseNavItem from "../../NavItem";
+import NavLinkAdapter from 'src/@common/core/NavLinkAdapter';
+import { alpha, styled } from '@mui/material/styles';
+import clsx from 'clsx';
+import PropTypes from 'prop-types';
+import { useMemo } from 'react';
+import ListItem from '@mui/material/ListItem';
+import { ListItemText } from '@mui/material';
+import FuseNavItem from '../../NavItem';
 
 const Root = styled(ListItem)(({ theme, itempadding, ...props }) => ({
   minminHeight: 44,
-  width: "100%",
-  borderRadius: "6px",
-  margin: "28px 0 0 0",
+  width: '100%',
+  borderRadius: '6px',
+  margin: '28px 0 0 0',
   paddingRight: 16,
   paddingLeft: props.itempadding > 80 ? 80 : props.itempadding,
   paddingTop: 10,
   paddingBottom: 10,
   color: alpha(theme.palette.text.primary, 0.7),
   fontWeight: 600,
-  letterSpacing: "0.025em",
+  letterSpacing: '0.025em',
 }));
 
 function FuseNavVerticalGroup(props) {
@@ -30,11 +30,11 @@ function FuseNavVerticalGroup(props) {
     () => (
       <>
         <Root
-          component={item.url ? NavLinkAdapter : "li"}
+          component={item.url ? NavLinkAdapter : 'li'}
           itempadding={itempadding}
           className={clsx(
-            "fuse-list-subheader flex items-center  py-10",
-            !item.url && "cursor-default"
+            'fuse-list-subheader flex items-center  py-10',
+            !item.url && 'cursor-default'
           )}
           onClick={() => onItemClick && onItemClick(item)}
           to={item.url}
@@ -46,21 +46,21 @@ function FuseNavVerticalGroup(props) {
             className="fuse-list-subheader-text"
             sx={{
               margin: 0,
-              "& > .MuiListItemText-primary": {
+              '& > .MuiListItemText-primary': {
                 fontSize: 12,
-                color: "secondary.light",
+                color: 'secondary.light',
                 fontWeight: 600,
-                textTransform: "uppercase",
-                letterSpacing: ".05em",
-                lineHeight: "20px",
+                textTransform: 'uppercase',
+                letterSpacing: '.05em',
+                lineHeight: '20px',
               },
 
-              "& > .MuiListItemText-secondary": {
+              '& > .MuiListItemText-secondary': {
                 fontSize: 11,
-                color: "text.disabled",
-                letterSpacing: ".06px",
+                color: 'text.disabled',
+                letterSpacing: '.06px',
                 fontWeight: 500,
-                lineHeight: "1.5",
+                lineHeight: '1.5',
               },
             }}
             primary={item.title}

@@ -1,32 +1,32 @@
-import { styled } from "@mui/material/styles";
-import MobileDetect from "mobile-detect";
-import PerfectScrollbar from "perfect-scrollbar";
-import "perfect-scrollbar/css/perfect-scrollbar.css";
-import PropTypes from "prop-types";
-import { createRef, forwardRef, useCallback, useEffect, useRef } from "react";
-import { connect } from "react-redux";
-import history from "@history";
-import withRouterAndRef from "../withRouterAndRef/withRouterAndRef";
+import { styled } from '@mui/material/styles';
+import MobileDetect from 'mobile-detect';
+import PerfectScrollbar from 'perfect-scrollbar';
+import 'perfect-scrollbar/css/perfect-scrollbar.css';
+import PropTypes from 'prop-types';
+import { createRef, forwardRef, useCallback, useEffect, useRef } from 'react';
+import { connect } from 'react-redux';
+import history from '@history';
+import withRouterAndRef from '../withRouterAndRef/withRouterAndRef';
 
-const Root = styled("div")(({ theme }) => ({
-  overscrollBehavior: "contain",
-  minHeight: "100%",
+const Root = styled('div')(({ theme }) => ({
+  overscrollBehavior: 'contain',
+  minHeight: '100%',
 }));
 
 const md = new MobileDetect(window.navigator.userAgent);
 const isMobile = md.mobile();
 
 const handlerNameByEvent = {
-  "ps-scroll-y": "onScrollY",
-  "ps-scroll-x": "onScrollX",
-  "ps-scroll-up": "onScrollUp",
-  "ps-scroll-down": "onScrollDown",
-  "ps-scroll-left": "onScrollLeft",
-  "ps-scroll-right": "onScrollRight",
-  "ps-y-reach-start": "onYReachStart",
-  "ps-y-reach-end": "onYReachEnd",
-  "ps-x-reach-start": "onXReachStart",
-  "ps-x-reach-end": "onXReachEnd",
+  'ps-scroll-y': 'onScrollY',
+  'ps-scroll-x': 'onScrollX',
+  'ps-scroll-up': 'onScrollUp',
+  'ps-scroll-down': 'onScrollDown',
+  'ps-scroll-left': 'onScrollLeft',
+  'ps-scroll-right': 'onScrollRight',
+  'ps-y-reach-start': 'onYReachStart',
+  'ps-y-reach-end': 'onYReachEnd',
+  'ps-x-reach-start': 'onXReachStart',
+  'ps-x-reach-end': 'onXReachEnd',
 };
 Object.freeze(handlerNameByEvent);
 
@@ -138,8 +138,8 @@ const Scrollbars = forwardRef((props, ref) => {
       style={
         props.customScrollbars && (props.enable || true) && !isMobile
           ? {
-              position: "relative",
-              overflow: "hidden!important",
+              position: 'relative',
+              overflow: 'hidden!important',
             }
           : {}
       }
@@ -171,7 +171,7 @@ Scrollbars.propTypes = {
 };
 
 Scrollbars.defaultProps = {
-  className: "",
+  className: '',
   enable: true,
   scrollToTopOnChildChange: false,
   scrollToTopOnRouteChange: false,

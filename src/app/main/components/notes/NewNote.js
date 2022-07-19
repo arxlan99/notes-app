@@ -1,10 +1,10 @@
-import ClickAwayListener from "@mui/material/ClickAwayListener";
-import Paper from "@mui/material/Paper";
-import Typography from "@mui/material/Typography";
-import { useState } from "react";
-import { useDispatch } from "react-redux";
-import NoteForm from "./note-form/NoteForm";
-import { createNote } from "./store/notesSlice";
+import ClickAwayListener from '@mui/material/ClickAwayListener';
+import Paper from '@mui/material/Paper';
+import Typography from '@mui/material/Typography';
+import { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import NoteForm from './note-form/NoteForm';
+import { createNote } from './store/notesSlice';
 
 function NewNote(props) {
   const dispatch = useDispatch();
@@ -14,7 +14,7 @@ function NewNote(props) {
   function handleFormOpen(ev) {
     ev.stopPropagation();
     setFormOpen(true);
-    document.addEventListener("keydown", escFunction, false);
+    document.addEventListener('keydown', escFunction, false);
   }
 
   function handleFormClose() {
@@ -22,7 +22,7 @@ function NewNote(props) {
       return;
     }
     setFormOpen(false);
-    document.removeEventListener("keydown", escFunction, false);
+    document.removeEventListener('keydown', escFunction, false);
   }
 
   function handleCreate(note) {
@@ -37,7 +37,7 @@ function NewNote(props) {
   }
 
   function handleClickAway(ev) {
-    const preventCloseElements = document.querySelector(".prevent-add-close");
+    const preventCloseElements = document.querySelector('.prevent-add-close');
     const preventClose = preventCloseElements ? preventCloseElements.contains(ev.target) : false;
     if (preventClose) {
       return;

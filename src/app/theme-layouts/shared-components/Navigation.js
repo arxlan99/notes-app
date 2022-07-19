@@ -1,14 +1,14 @@
-import CommonNavigation from "@common/core/CommonNavigation";
-import clsx from "clsx";
-import { memo, useMemo } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { selectNavigation } from "app/store/common/navigationSlice";
-import useThemeMediaQuery from "src/@common/hooks/useThemeMediaQuery";
-import { navbarCloseMobile } from "app/store/common/navbarSlice";
+import CommonNavigation from '@common/core/CommonNavigation';
+import clsx from 'clsx';
+import { memo, useMemo } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { selectNavigation } from 'app/store/common/navigationSlice';
+import useThemeMediaQuery from 'src/@common/hooks/useThemeMediaQuery';
+import { navbarCloseMobile } from 'app/store/common/navbarSlice';
 
 function Navigation(props) {
   const navigation = useSelector(selectNavigation);
-  const isMobile = useThemeMediaQuery((theme) => theme.breakpoints.down("lg"));
+  const isMobile = useThemeMediaQuery((theme) => theme.breakpoints.down('lg'));
 
   const dispatch = useDispatch();
 
@@ -21,7 +21,7 @@ function Navigation(props) {
 
     return (
       <CommonNavigation
-        className={clsx("navigation", props.className)}
+        className={clsx('navigation', props.className)}
         navigation={navigation}
         layout={props.layout}
         dense={props.dense}
@@ -33,7 +33,7 @@ function Navigation(props) {
 }
 
 Navigation.defaultProps = {
-  layout: "vertical",
+  layout: 'vertical',
 };
 
 export default memo(Navigation);

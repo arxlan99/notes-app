@@ -1,38 +1,38 @@
-import NavLinkAdapter from "src/@common/core/NavLinkAdapter";
-import { styled, useTheme } from "@mui/material/styles";
-import { useDebounce } from "src/@common/hooks";
-import Grow from "@mui/material/Grow";
-import IconButton from "@mui/material/IconButton";
-import ListItem from "@mui/material/ListItem";
-import ListItemText from "@mui/material/ListItemText";
-import Paper from "@mui/material/Paper";
-import clsx from "clsx";
-import PropTypes from "prop-types";
-import { memo, useMemo, useState } from "react";
-import * as ReactDOM from "react-dom";
-import { Manager, Popper, Reference } from "react-popper";
-import withRouter from "src/@common/core/withRouter";
-import FuseNavBadge from "../../NavBadge";
-import FuseNavItem from "../../NavItem";
-import FuseSvgIcon from "../../../SvgIcon";
+import NavLinkAdapter from 'src/@common/core/NavLinkAdapter';
+import { styled, useTheme } from '@mui/material/styles';
+import { useDebounce } from 'src/@common/hooks';
+import Grow from '@mui/material/Grow';
+import IconButton from '@mui/material/IconButton';
+import ListItem from '@mui/material/ListItem';
+import ListItemText from '@mui/material/ListItemText';
+import Paper from '@mui/material/Paper';
+import clsx from 'clsx';
+import PropTypes from 'prop-types';
+import { memo, useMemo, useState } from 'react';
+import * as ReactDOM from 'react-dom';
+import { Manager, Popper, Reference } from 'react-popper';
+import withRouter from 'src/@common/core/withRouter';
+import FuseNavBadge from '../../NavBadge';
+import FuseNavItem from '../../NavItem';
+import FuseSvgIcon from '../../../SvgIcon';
 
 const StyledListItem = styled(ListItem)(({ theme }) => ({
   color: theme.palette.text.primary,
   minHeight: 48,
-  "&.active, &.active:hover, &.active:focus": {
+  '&.active, &.active:hover, &.active:focus': {
     backgroundColor: `${theme.palette.secondary.main}!important`,
     color: `${theme.palette.secondary.contrastText}!important`,
 
-    "&.open": {
-      backgroundColor: "rgba(0,0,0,.08)",
+    '&.open': {
+      backgroundColor: 'rgba(0,0,0,.08)',
     },
 
-    "& > .fuse-list-item-text": {
-      padding: "0 0 0 16px",
+    '& > .fuse-list-item-text': {
+      padding: '0 0 0 16px',
     },
 
-    "& .fuse-list-item-icon": {
-      color: "inherit",
+    '& .fuse-list-item-icon': {
+      color: 'inherit',
     },
   },
 }));
@@ -76,15 +76,15 @@ function FuseNavHorizontalCollapse(props) {
                 <StyledListItem
                   button
                   className={clsx(
-                    "fuse-list-item",
-                    opened && "open",
-                    isUrlInChildren(item, props.location.pathname) && "active"
+                    'fuse-list-item',
+                    opened && 'open',
+                    isUrlInChildren(item, props.location.pathname) && 'active'
                   )}
                   onMouseEnter={() => handleToggle(true)}
                   onMouseLeave={() => handleToggle(false)}
-                  aria-owns={opened ? "menu-fuse-list-grow" : null}
+                  aria-owns={opened ? 'menu-fuse-list-grow' : null}
                   aria-haspopup="true"
-                  component={item.url ? NavLinkAdapter : "li"}
+                  component={item.url ? NavLinkAdapter : 'li'}
                   to={item.url}
                   end={item.end}
                   role="button"
@@ -93,7 +93,7 @@ function FuseNavHorizontalCollapse(props) {
                   {item.icon && (
                     <FuseSvgIcon
                       color="action"
-                      className={clsx("fuse-list-item-icon shrink-0", item.iconClass)}>
+                      className={clsx('fuse-list-item-icon shrink-0', item.iconClass)}>
                       {item.icon}
                     </FuseSvgIcon>
                   )}
@@ -101,7 +101,7 @@ function FuseNavHorizontalCollapse(props) {
                   <ListItemText
                     className="fuse-list-item-text"
                     primary={item.title}
-                    classes={{ primary: "text-13 truncate" }}
+                    classes={{ primary: 'text-13 truncate' }}
                   />
 
                   {item.badge && <FuseNavBadge className="mx-4" badge={item.badge} />}
@@ -111,9 +111,9 @@ function FuseNavHorizontalCollapse(props) {
                     color="inherit"
                     size="large">
                     <FuseSvgIcon size={16} className="arrow-icon">
-                      {theme.direction === "ltr"
-                        ? "heroicons-outline:arrow-sm-right"
-                        : "heroicons-outline:arrow-sm-left"}
+                      {theme.direction === 'ltr'
+                        ? 'heroicons-outline:arrow-sm-right'
+                        : 'heroicons-outline:arrow-sm-left'}
                     </FuseSvgIcon>
                   </IconButton>
                 </StyledListItem>
@@ -122,7 +122,7 @@ function FuseNavHorizontalCollapse(props) {
           </Reference>
           {ReactDOM.createPortal(
             <Popper
-              placement={theme.direction === "ltr" ? "right" : "left"}
+              placement={theme.direction === 'ltr' ? 'right' : 'left'}
               eventsEnabled={opened}
               positionFixed>
               {({ ref, style, placement, arrowProps }) =>
@@ -134,14 +134,14 @@ function FuseNavHorizontalCollapse(props) {
                       zIndex: 999 + nestedLevel + 1,
                     }}
                     data-placement={placement}
-                    className={clsx("z-999", !opened && "pointer-events-none")}>
-                    <Grow in={opened} id="menu-fuse-list-grow" style={{ transformOrigin: "0 0 0" }}>
+                    className={clsx('z-999', !opened && 'pointer-events-none')}>
+                    <Grow in={opened} id="menu-fuse-list-grow" style={{ transformOrigin: '0 0 0' }}>
                       <Paper
                         className="rounded-8"
                         onMouseEnter={() => handleToggle(true)}
                         onMouseLeave={() => handleToggle(false)}>
                         {item.children && (
-                          <ul className={clsx("popper-navigation-list", dense && "dense", "px-0")}>
+                          <ul className={clsx('popper-navigation-list', dense && 'dense', 'px-0')}>
                             {item.children.map((_item) => (
                               <FuseNavItem
                                 key={_item.id}
@@ -159,7 +159,7 @@ function FuseNavHorizontalCollapse(props) {
                 )
               }
             </Popper>,
-            document.querySelector("#root")
+            document.querySelector('#root')
           )}
         </Manager>
       </ul>

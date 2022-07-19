@@ -1,10 +1,10 @@
-import IconButton from "@mui/material/IconButton";
-import { useDispatch, useSelector } from "react-redux";
-import { OutlinedInput } from "@mui/material";
-import { motion } from "framer-motion";
-import InputAdornment from "@mui/material/InputAdornment";
-import FuseSvgIcon from "@common/core/SvgIcon";
-import { selectSearchText, setNotesSearchText } from "./store/notesSlice";
+import IconButton from '@mui/material/IconButton';
+import { useDispatch, useSelector } from 'react-redux';
+import { OutlinedInput } from '@mui/material';
+import { motion } from 'framer-motion';
+import InputAdornment from '@mui/material/InputAdornment';
+import FuseSvgIcon from '@common/core/SvgIcon';
+import { selectSearchText, setNotesSearchText } from './store/notesSlice';
 
 function NotesSearch(props) {
   const dispatch = useDispatch();
@@ -25,7 +25,7 @@ function NotesSearch(props) {
         </InputAdornment>
       }
       inputProps={{
-        "aria-label": "Search",
+        'aria-label': 'Search',
       }}
       value={searchText}
       onChange={(ev) => dispatch(setNotesSearchText(ev))}

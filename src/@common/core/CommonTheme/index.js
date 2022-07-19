@@ -1,1 +1,1 @@
-export { default } from "./CommonTheme";
+export { default } from './CommonTheme';

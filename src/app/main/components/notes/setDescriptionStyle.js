@@ -38,21 +38,21 @@ function setDescriptionStyle(sentence, refEl, enabled) {
     return;
   }
 
-  const tmp = document.createElement("div");
-  tmp.style.display = "inline-block";
-  tmp.style.fontSize = "10px";
-  tmp.style.fontWeight = "600";
-  tmp.style.lineHeight = "10px";
-  tmp.style.position = "absolute";
-  tmp.style.whiteSpace = "pre-wrap";
-  tmp.style.wordWrap = "break-word";
-  tmp.style.pointerEvents = "none";
-  tmp.style.visibility = "hidden";
+  const tmp = document.createElement('div');
+  tmp.style.display = 'inline-block';
+  tmp.style.fontSize = '10px';
+  tmp.style.fontWeight = '600';
+  tmp.style.lineHeight = '10px';
+  tmp.style.position = 'absolute';
+  tmp.style.whiteSpace = 'pre-wrap';
+  tmp.style.wordWrap = 'break-word';
+  tmp.style.pointerEvents = 'none';
+  tmp.style.visibility = 'hidden';
   document.body.appendChild(tmp);
 
   let size;
 
-  const words = sentence.split(" ");
+  const words = sentence.split(' ');
 
   const wordLengths = words.map((word) => {
     tmp.textContent = word.toString();

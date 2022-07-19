@@ -1,8 +1,8 @@
-import { useSelector } from "react-redux";
-import Scrollbars from "@common/core/Scrollbars";
-import { ThemeProvider, useTheme } from "@mui/material/styles";
-import { selectContrastMainTheme } from "app/store/common/settingsSlice";
-import clsx from "clsx";
+import { useSelector } from 'react-redux';
+import Scrollbars from '@common/core/Scrollbars';
+import { ThemeProvider, useTheme } from '@mui/material/styles';
+import { selectContrastMainTheme } from 'app/store/common/settingsSlice';
+import clsx from 'clsx';
 
 function PageCardedSidebarContent(props) {
   const theme = useTheme();
@@ -14,9 +14,9 @@ function PageCardedSidebarContent(props) {
         <ThemeProvider theme={contrastTheme}>
           <div
             className={clsx(
-              "FusePageCarded-sidebarHeader",
+              'FusePageCarded-sidebarHeader',
               props.variant,
-              props.sidebarInner && "FusePageCarded-sidebarHeaderInnerSidebar"
+              props.sidebarInner && 'FusePageCarded-sidebarHeaderInnerSidebar'
             )}>
             {props.header}
           </div>

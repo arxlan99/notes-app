@@ -1,31 +1,31 @@
-import { styled } from "@mui/material/styles";
-import ListItem from "@mui/material/ListItem";
-import ListItemText from "@mui/material/ListItemText";
-import clsx from "clsx";
-import PropTypes from "prop-types";
-import { memo, useMemo } from "react";
-import withRouter from "src/@common/core/withRouter";
-import FuseNavBadge from "../../NavBadge";
-import FuseSvgIcon from "../../../SvgIcon";
+import { styled } from '@mui/material/styles';
+import ListItem from '@mui/material/ListItem';
+import ListItemText from '@mui/material/ListItemText';
+import clsx from 'clsx';
+import PropTypes from 'prop-types';
+import { memo, useMemo } from 'react';
+import withRouter from 'src/@common/core/withRouter';
+import FuseNavBadge from '../../NavBadge';
+import FuseSvgIcon from '../../../SvgIcon';
 
 const StyledListItem = styled(ListItem)(({ theme }) => ({
   color: theme.palette.text.primary,
-  textDecoration: "none!important",
+  textDecoration: 'none!important',
   minHeight: 48,
-  "&.active": {
+  '&.active': {
     backgroundColor: `${theme.palette.secondary.main}!important`,
     color: `${theme.palette.secondary.contrastText}!important`,
-    pointerEvents: "none",
-    "& .fuse-list-item-text-primary": {
-      color: "inherit",
+    pointerEvents: 'none',
+    '& .fuse-list-item-text-primary': {
+      color: 'inherit',
     },
-    "& .fuse-list-item-icon": {
-      color: "inherit",
+    '& .fuse-list-item-icon': {
+      color: 'inherit',
     },
   },
-  "& .fuse-list-item-icon": {},
-  "& .fuse-list-item-text": {
-    padding: "0 0 0 16px",
+  '& .fuse-list-item-icon': {},
+  '& .fuse-list-item-text': {
+    padding: '0 0 0 16px',
   },
 }));
 
@@ -38,14 +38,14 @@ function FuseNavHorizontalLink(props) {
         button
         component="a"
         href={item.url}
-        target={item.target ? item.target : "_blank"}
-        className={clsx("fuse-list-item")}
+        target={item.target ? item.target : '_blank'}
+        className={clsx('fuse-list-item')}
         role="button"
         sx={item.sx}
         disabled={item.disabled}>
         {item.icon && (
           <FuseSvgIcon
-            className={clsx("fuse-list-item-icon shrink-0", item.iconClass)}
+            className={clsx('fuse-list-item-icon shrink-0', item.iconClass)}
             color="action">
             {item.icon}
           </FuseSvgIcon>
@@ -54,7 +54,7 @@ function FuseNavHorizontalLink(props) {
         <ListItemText
           className="fuse-list-item-text"
           primary={item.title}
-          classes={{ primary: "text-13 fuse-list-item-text-primary truncate" }}
+          classes={{ primary: 'text-13 fuse-list-item-text-primary truncate' }}
         />
 
         {item.badge && <FuseNavBadge className="ltr:ml-8 rtl:mr-8" badge={item.badge} />}

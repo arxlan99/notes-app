@@ -1,7 +1,7 @@
-import { lazy } from "react";
-import Profile from "../profile/Profile";
+import { lazy } from 'react';
+import Profile from '../profile/Profile';
 
-const NotesApp = lazy(() => import("./NotesApp"));
+const NotesApp = lazy(() => import('./NotesApp'));
 
 const NotesAppConfig = {
   settings: {
@@ -11,15 +11,15 @@ const NotesAppConfig = {
   },
   routes: [
     {
-      path: "apps/notes",
+      path: 'apps/notes',
       element: <NotesApp />,
       children: [
         {
-          path: ":filter",
+          path: ':filter',
           element: <NotesApp />,
           children: [
             {
-              path: ":id",
+              path: ':id',
               element: <NotesApp />,
             },
           ],
@@ -27,7 +27,7 @@ const NotesAppConfig = {
       ],
     },
     {
-      path: "apps/profile",
+      path: 'apps/profile',
       element: <Profile />,
     },
   ],

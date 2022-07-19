@@ -1,1 +1,1 @@
-export { default } from "./PageCarded";
+export { default } from './PageCarded';

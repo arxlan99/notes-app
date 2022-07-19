@@ -1,10 +1,10 @@
-import _ from "@lodash";
-import Checkbox from "@mui/material/Checkbox";
-import IconButton from "@mui/material/IconButton";
-import Input from "@mui/material/Input";
-import ListItem from "@mui/material/ListItem";
-import clsx from "clsx";
-import FuseSvgIcon from "@common/core/SvgIcon";
+import _ from '@lodash';
+import Checkbox from '@mui/material/Checkbox';
+import IconButton from '@mui/material/IconButton';
+import Input from '@mui/material/Input';
+import ListItem from '@mui/material/ListItem';
+import clsx from 'clsx';
+import FuseSvgIcon from '@common/core/SvgIcon';
 
 function NoteFormListItem(props) {
   function handleChange(event) {
@@ -12,7 +12,7 @@ function NoteFormListItem(props) {
       _.setIn(
         props.item,
         event.target.name,
-        event.target.type === "checkbox" ? event.target.checked : event.target.value
+        event.target.type === 'checkbox' ? event.target.checked : event.target.value
       )
     );
   }
@@ -33,7 +33,7 @@ function NoteFormListItem(props) {
         color="default"
       />
       <Input
-        className={clsx("flex flex-1 mx-8", props.item.completed && "line-through opacity-50")}
+        className={clsx('flex flex-1 mx-8', props.item.completed && 'line-through opacity-50')}
         name="text"
         value={props.item.content}
         onChange={handleChange}

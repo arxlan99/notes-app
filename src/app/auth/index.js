@@ -1,3 +1,3 @@
-import authRoles from "./authRoles";
+import authRoles from './authRoles';
 
 export default authRoles;

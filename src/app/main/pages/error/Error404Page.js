@@ -1,7 +1,7 @@
-import Typography from "@mui/material/Typography";
-import { motion } from "framer-motion";
-import { Link } from "react-router-dom";
-import Box from "@mui/material/Box";
+import Typography from '@mui/material/Typography';
+import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
+import Box from '@mui/material/Box';
 
 function Error404Page() {
   return (
@@ -18,7 +18,7 @@ function Error404Page() {
             fill="none"
             preserveAspectRatio="xMidYMax slice"
             xmlns="http://www.w3.org/2000/svg"
-            sx={{ color: "secondary.main" }}>
+            sx={{ color: 'secondary.main' }}>
             <g clipPath="url(#clip0)">
               <path
                 d="M520.426 167.01C434.482 167.01 372.775 222.149 372.775 350.808C372.775 496.621 434.482 535.218 520.426 535.218C606.37 535.218 671.753 492.945 671.753 350.808C671.753 198.868 606.37 167.01 520.426 167.01ZM520.991 486.818C461.464 486.818 430.365 451.895 430.365 350.902C430.365 261.79 462.737 214.797 522.264 214.797C581.791 214.797 614.163 245.665 614.163 350.902C614.163 449.349 580.517 486.818 520.991 486.818Z"

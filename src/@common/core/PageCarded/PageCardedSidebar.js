@@ -1,9 +1,9 @@
-import Drawer from "@mui/material/Drawer";
-import Hidden from "@mui/material/Hidden";
-import SwipeableDrawer from "@mui/material/SwipeableDrawer";
-import clsx from "clsx";
-import { forwardRef, useCallback, useEffect, useImperativeHandle, useState } from "react";
-import PageCardedSidebarContent from "./PageCardedSidebarContent";
+import Drawer from '@mui/material/Drawer';
+import Hidden from '@mui/material/Hidden';
+import SwipeableDrawer from '@mui/material/SwipeableDrawer';
+import clsx from 'clsx';
+import { forwardRef, useCallback, useEffect, useImperativeHandle, useState } from 'react';
+import PageCardedSidebarContent from './PageCardedSidebarContent';
 
 const PageCardedSidebar = forwardRef((props, ref) => {
   const { open, position, variant, rootRef } = props;
@@ -24,7 +24,7 @@ const PageCardedSidebar = forwardRef((props, ref) => {
 
   return (
     <>
-      <Hidden lgUp={variant === "permanent"}>
+      <Hidden lgUp={variant === 'permanent'}>
         <SwipeableDrawer
           variant="temporary"
           anchor={position}
@@ -33,11 +33,11 @@ const PageCardedSidebar = forwardRef((props, ref) => {
           onClose={() => props?.onClose()}
           disableSwipeToOpen
           classes={{
-            root: clsx("FusePageCarded-sidebarWrapper", variant),
+            root: clsx('FusePageCarded-sidebarWrapper', variant),
             paper: clsx(
-              "FusePageCarded-sidebar",
+              'FusePageCarded-sidebar',
               variant,
-              position === "left" ? "FusePageCarded-leftSidebar" : "FusePageCarded-rightSidebar"
+              position === 'left' ? 'FusePageCarded-leftSidebar' : 'FusePageCarded-rightSidebar'
             ),
           }}
           ModalProps={{
@@ -46,28 +46,28 @@ const PageCardedSidebar = forwardRef((props, ref) => {
           // container={rootRef.current}
           BackdropProps={{
             classes: {
-              root: "FusePageCarded-backdrop",
+              root: 'FusePageCarded-backdrop',
             },
           }}
-          style={{ position: "absolute" }}>
+          style={{ position: 'absolute' }}>
           <PageCardedSidebarContent {...props} />
         </SwipeableDrawer>
       </Hidden>
-      {variant === "permanent" && (
+      {variant === 'permanent' && (
         <Hidden lgDown>
           <Drawer
             variant="permanent"
             anchor={position}
             className={clsx(
-              "FusePageCarded-sidebarWrapper",
+              'FusePageCarded-sidebarWrapper',
               variant,
-              isOpen ? "opened" : "closed",
-              position === "left" ? "FusePageCarded-leftSidebar" : "FusePageCarded-rightSidebar"
+              isOpen ? 'opened' : 'closed',
+              position === 'left' ? 'FusePageCarded-leftSidebar' : 'FusePageCarded-rightSidebar'
             )}
             open={isOpen}
             onClose={props?.onClose}
             classes={{
-              paper: clsx("FusePageCarded-sidebar", variant),
+              paper: clsx('FusePageCarded-sidebar', variant),
             }}>
             <PageCardedSidebarContent {...props} />
           </Drawer>
